@@ -1,0 +1,46 @@
+Masumi TODO List
+
+* Stories
+
+** TODO Create packaging for Windows [0/4]
+   - [ ] Make an installer for Windows that contains the jar file
+		 and a script that runs the jar file.
+   - [ ] Make Masumi run from the start menu.
+   - [ ] Make Masumi run from an icon on the desktop.
+   - [ ] Create a minimal web page that shows how to install Masumi.
+
+** TODO Create packaging for Debian/Ubuntu [0/3]
+   - [ ] Make a debian package that contains the jar file
+		 and a script that runs the jar file.
+   - [ ] Make Masumi run from the start menu.
+   - [ ] Create a minimal web page that shows how to install Masumi.
+
+** TODO Create packaging for OSX [0/2]
+   - [ ] Do this:
+		 http://java.sun.com/developer/technicalArticles/JavaLP/JavaToMac3/
+   - [ ] Create a minimal web page that shows how to install Masumi.
+
+** TODO Create packaging for WebStart [0/4]
+   Webstart is a way to distribute applications for any Java platform
+   using the web.  The person simply clicks a link on a web page and
+   the application is installed.
+   - [ ] Create a webstart application
+   - [ ] Create a minimal web page that installs Masumi.
+
+** TODO Create an Android version [0/1]
+   - [ ] Create version that starts on Android.  It should open
+		 a window with nothing on it.  The user should be able
+		 to navigate away from the window.  Android should be able
+		 to suspend or close the app any time it wants.  There is
+		 no exit option.
+
+** TODO Create packaging for Android [0/1]
+   - [ ] Create a package that can be downloaded and installed on
+		 Android.
+   - [ ] Create a minimal web page that installs Masumi.
+
+After this point all functionality must work on Linux, Window, MacOS
+and Android before it is set to "done".  I wonder if that means I have
+to buy a Mac... Sigh...
+
+
