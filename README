@@ -1,0 +1,43 @@
+Masumi is a tool to help you study Japanese.  It is pre-pre-pre-alpha.
+That means it does precisely nothing right now.  But I'm working on that.
+If you want a tool to help you study Japanese right now, please
+take a look at http://jldrill.rubyforge.org 
+
+Masumi is the sucessor to JLDrill.  With JLDrill my idea was to create
+an application that drills you on various aspects of Japanese.  This
+was helpful, but as I continued to learn I realized the drilling is
+not the best focus for language acquisition.  Instead I want to
+focus on comprehensible input.
+
+In language acquisition, the best thing is to immerse yourself in the
+language.  As you encounter more and more natural sentences that
+you can understand, you will acquire the language.  When you first
+learned your native language, this is what happened.
+
+But the problem is that learning on your own in this manner is very
+difficult.  At the beginning, virtually all the Japanese you are
+likely to encounter is not understandable.  Your parents took on
+the role of patiently explaining everything that you encountered.
+Eventually you acquired enough that you could start to learn on
+your own.  But it took time.
+
+Masumi is intented to be a type of electric companion that patiently
+explains Japanese as you encounter it.  It will give you access to
+a lot of resources to help you comprehend language that you encounter
+on your computer.  Then it provides opportunity to review that
+language.
+
+But right now all you get is a window that opens and closes.  It
+has an icon too, but it is the icon from JLDrill.  You've got to
+start somewhere.
+
+I am writing this in Java as I hope to be able to deploy Masumi
+on anything that will run Java (including Android).  Ideally I
+would like to deploy on iOS too, but it looks like that will require
+a rewrite in Objective C.
+
+The development strategy for Masumi is to concentrate on BDD.
+The reason for this is that I am likely to have to write at least
+2 UIs and also rewrite in Objective C.  So I need to have clear
+requirements.
+
