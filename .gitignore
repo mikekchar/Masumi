@@ -1,0 +1,7 @@
+*.swp
+*~
+.settings/
+bin/
+doc/
+pkg/
+tools/launch4j/

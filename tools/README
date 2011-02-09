@@ -1,0 +1,9 @@
+This directory contains build tools.
+
+Right now there is only one build tool, launch4j.  If you wish
+to build the windows executable you will need to download the
+appropriate file from here:
+http://sourceforge.net/projects/launch4j/files/launch4j-3/3.0.2/
+
+Please extract the launch4j directory here.  This will allow
+the ant script to build the Windows executable.
