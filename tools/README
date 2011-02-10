@@ -1,9 +1,26 @@
 This directory contains build tools.
 
-Right now there is only one build tool, launch4j.  If you wish
-to build the windows executable you will need to download the
-appropriate file from here:
+Right now there are two build tools necessary for Windows packaging, 
+launch4j and nsis-ant.  If you wish to build the windows executable 
+you will need to download the appropriate files.  If you don't need
+to make Windows packages, then you don't need to do anything here.
+
+Lauch4j
+-------
+You can download lauch4j from here
 http://sourceforge.net/projects/launch4j/files/launch4j-3/3.0.2/
 
 Please extract the launch4j directory here.  This will allow
 the ant script to build the Windows executable.
+
+nsis
+----
+Please install nsis on your system.  On debian you can install it using
+apt-get nsis.  Or you can download it from:
+
+http://nsis.sourceforge.net/Download
+
+Then download the nsis-ant jar file into this directory
+
+http://github.com/downloads/dreese/nsis-ant/nsisant-1.3.jar
+
