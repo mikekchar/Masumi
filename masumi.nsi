@@ -26,11 +26,20 @@ section "Masumi"
     # create the uninstaller
     writeUninstaller "$INSTDIR\uninstall-masumi.exe"
 
+    # Create registry keys so that the uninstaller shows up in
+    # Add/Remove Programs
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Masumi" \
+        "DisplayName" "Masumi - A Japanese language learning tool."
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Masumi" \
+        "UninstallString" "$\"$INSTDIR\uninstall-masumi.exe$\""
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Masumi" \
+        "QuietUninstallString" "$\"$INSTDIR\uninstall-masumi.exe$\" /S"
+
     # create a shortcut named "new shortcut" in the 
     # start menu programs directory
-    # point the new shortcut at the program uninstaller
-    createShortCut "$SMPROGRAMS\uninstall-masumi.lnk" "$INSTDIR\uninstall-masumi.exe"
     createShortCut "$SMPROGRAMS\masumi.lnk" "$INSTDIR\masumi.exe"
+    # Add a link to the desktop
+    createShortCut "$DESKTOP\masumi.lnk" "$INSTDIR\masumi.exe"
 sectionEnd
 
 # uninstaller section start
@@ -40,7 +49,9 @@ section "uninstall"
     delete "$INSTDIR\uninstall-masumi.exe"
 
     delete "$SMPROGRAMS\masumi.lnk"
-    delete "$SMPROGRAMS\uninstall-masumi.lnk"
+    delete "$DESKTOP\masumi.lnk"
+
+    DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Masumi"
 
     rmdir "$INSTDIR"
     # uninstaller section end
