@@ -2,6 +2,12 @@
 name "Masumi"
 outFile "pkg\masumi-win32-installer.exe"
 
+RequestExecutionLevel admin
+
+Function .onInit
+# TODO Check UserInfo to make sure the user has the correct rights to install
+FunctionEnd
+
 # These are the pages that are shown on install
 Page directory
 Page instfiles
@@ -15,6 +21,10 @@ installDir $PROGRAMFILES\Masumi
 
 # start default section
 section "Masumi"
+
+    # Set the context to All users so that the uninstall will get rid of
+    # the links
+    SetShellVarContext all
 
     # set the installation directory as the destination 
     # for the following actions
@@ -44,6 +54,10 @@ sectionEnd
 
 # uninstaller section start
 section "uninstall"
+
+    # Set the context to All users so that the uninstall will get rid of
+    # the links
+    SetShellVarContext all
 
     delete "$INSTDIR\masumi.exe"
     delete "$INSTDIR\uninstall-masumi.exe"
