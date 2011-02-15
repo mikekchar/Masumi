@@ -5,3 +5,7 @@ bin/
 doc/
 pkg/
 tools/launch4j/
+tools/nsisant-1.3.jar
+build.num
+debian/masumi
+debian/masumi.debhelper.log

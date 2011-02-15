@@ -24,6 +24,13 @@ public class Masumi extends Context {
 		super(aFactory);
 		isRunning = false;
 	}
+
+    /**
+     * Returns the version information for this application.
+     */
+    public String version() {
+        return Masumi.class.getPackage().getImplementationVersion();
+    }
 	
 	/*
 	 * Creates a new MainContext.  This can be overridden in the tests to allow for mocks.
@@ -76,6 +83,7 @@ public class Masumi extends Context {
 	 */
 	public static void main(String[] args) {
 		Masumi masumi = new Masumi(new SwingFactory());
+
 		masumi.run();
 	}
 

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project basedir="." default="jar" name="Masumi">
+    <property name="version.num" value="0.0.1"/>
+    <buildnumber file="build.num"/>
+    <property name="src" location="src"/>
+    <property name="build" location="bin"/>
+    <property name="doc" location="doc"/>
+    <property name="jar" location="pkg/masumi.jar"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
@@ -7,36 +13,36 @@
         <pathelement location="bin"/>
     </path>
     <target name="init">
-        <mkdir dir="bin"/>
-        <copy includeemptydirs="false" todir="bin">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <mkdir dir="${build}"/>
+        <copy includeemptydirs="false" todir="${build}">
             <fileset dir="src">
                 <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
+        <mkdir dir="pkg"/>
     </target>
     <target name="clean">
         <delete dir="bin"/>
     </target>
     <target depends="clean" name="cleanall">
         <delete dir="pkg"/>
+        <delete dir="debian/masumi"/>
     </target>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac includeantruntime="false" debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
-            <src path="src"/>
+        <javac includeantruntime="false" debug="true" debuglevel="${debuglevel}" destdir="${build}" source="${source}" target="${target}">
+            <src path="${src}"/>
             <classpath refid="Masumi.classpath"/>
         </javac>
     </target>
-    <target depends="build-project" name="Masumi">
-        <java classname="masumi.Masumi" failonerror="true" fork="yes">
-            <classpath refid="Masumi.classpath"/>
-        </java>
-    </target>
     <target depends="build-project" name="jar">
-        <mkdir dir="pkg"/>
-        <jar destfile="pkg/masumi.jar" filesetmanifest="mergewithoutmain">
+        <jar destfile="${jar}" filesetmanifest="mergewithoutmain">
             <manifest>
+                <attribute name="Implementation-Version" 
+                        value="${version.num}-${build.number}"/>
                 <attribute name="Main-Class" value="masumi.Masumi"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>

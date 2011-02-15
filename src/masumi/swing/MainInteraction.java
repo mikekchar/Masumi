@@ -55,7 +55,7 @@ public class MainInteraction implements Main.Interaction {
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.addWindowListener(new FrameMediator(this));
 		frame.setTitle("Masumi");
-		URL url = getClass().getResource("resources/icon.png");
+		URL url = getClass().getResource("resources/masumi-icon.png");
 		icon = new ImageIcon(url);
 		frame.setIconImage(icon.getImage());
 		frame.setVisible(true); 

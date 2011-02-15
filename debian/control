@@ -1,0 +1,15 @@
+Source: masumi
+Section: text
+Priority: optional
+Maintainer: Mike Charlton <mikekchar@gmail.com>
+Build-Depends: debhelper (>> 7), javahelper (>= 0.32) , ant
+Build-Depends-Indep: openjdk-6-jdk
+Standards-Version: 3.8.3
+Homepage: http://github.org/mikekchar/masumi
+
+Package: masumi
+Architecture: all
+Depends: ${java:Depends}, ${misc:Depends}
+Description: A multi-platform Japanese language learning tool
+ Right now masumi does nothing but open up a window.  If you
+ close it, it exits.

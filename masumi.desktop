@@ -1,0 +1,11 @@
+[Desktop Entry]
+X-AppInstall-Package=masumi
+
+Name=Masumi - Japanese Language Learning Tool
+GenericName=jldrill
+Comment=Tool for learning Japanese
+Exec=/usr/bin/masumi
+Terminal=false
+Icon=masumi-icon
+Categories=Education
+Type=Application

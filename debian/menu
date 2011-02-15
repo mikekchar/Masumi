@@ -1,0 +1,3 @@
+?package(masumi):needs="X11" section="Applications/Education"\
+  title="Masumi" command="/usr/bin/masumi" icon="/usr/share/masumi/icon.xpm"
+

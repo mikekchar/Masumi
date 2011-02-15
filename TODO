@@ -11,12 +11,6 @@ Masumi TODO List
   please contact me.  Once I've started work on one story, I won't
   change stories until it is done, though.
 
-** TODO Create packaging for Debian/Ubuntu [0/3]
-   - [ ] Make a debian package that contains the jar file
-		 and a script that runs the jar file.
-   - [ ] Make Masumi run from the start menu with an icon.
-   - [ ] Create a minimal web page that shows how to install Masumi.
-
 ** TODO Create packaging for OSX [0/2]
    - [ ] Do this:
 		 http://java.sun.com/developer/technicalArticles/JavaLP/JavaToMac3/
@@ -74,4 +68,10 @@ Masumi TODO List
    - [X] Create a uninstaller for Masumi.
    - [X] Create a minimal web page that shows how to install Masumi.
 
+** DONE Create packaging for Debian/Ubuntu [4/4]
+   - [X] Set a version number on each build.
+   - [X] Make a debian package that contains the jar file
+		 and a script that runs the jar file.
+   - [X] Make Masumi run from the start menu with an icon.
+   - [X] Create a minimal web page that shows how to install Masumi.
 

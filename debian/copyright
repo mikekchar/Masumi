@@ -1,0 +1,21 @@
+This package was debianized by Mike Charlton <mikekchar@gmail.com> on
+Mon, 14 Feb 2011 13:53:51 +0900.
+
+It was downloaded from <http://sakabatou.dnsdojo.org/devel/Masumi>
+
+Upstream Author(s):
+
+    Mike Charlton <mikekchar@gmail.com>
+
+Copyright:
+
+    (C) 20011 Mike Charlton
+
+License:
+
+JLDrill is licensed under version 3.0 of the GNU General Public
+License (GPL) Please see the COPYING File for more details. 
+
+The Debian packaging is copyright 2011, Mike Charlton <mikekchar@gmail.com> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL-3'.
+
