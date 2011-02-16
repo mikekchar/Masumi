@@ -1,4 +1,4 @@
-pkg/masumi.jar usr/share/masumi
+tmp/masumi.jar usr/share/masumi
 src/masumi/swing/resources/masumi-icon.xpm usr/share/masumi
 masumi.desktop /usr/share/applications
 src/masumi/swing/resources/masumi-icon.png usr/share/icons
