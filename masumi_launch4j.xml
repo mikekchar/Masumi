@@ -12,7 +12,7 @@
   <customProcName>false</customProcName>
   <stayAlive>false</stayAlive>
   <manifest></manifest>
-  <icon>src/masumi/swing/resources/icon.ico</icon>
+  <icon>src/masumi/swing/resources/masumi-icon.ico</icon>
   <jre>
     <path></path>
     <minVersion>1.6.0</minVersion>
