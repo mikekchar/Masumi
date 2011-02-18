@@ -53,7 +53,8 @@
             <fileset dir="${build}"/>
         </jar>
     </target>
-    <!-- Launch4j is used for creating a Windows executable -->
+
+    <!-- Windows  package -->
     <property name="launch4j.dir" location="tools/launch4j" />
     <taskdef name="launch4j"
             classname="net.sf.launch4j.ant.Launch4jTask"
@@ -69,6 +70,8 @@
         <move file="${tmpdir}/masumi-win32-installer.exe"
             tofile="${pkgdir}/masumi_${version.num}-win32-installer.exe"/>
     </target>
+
+    <!-- Debian package -->
     <target name="debian-package" depends="jar">
         <exec dir="${basedir}" executable="dpkg-buildpackage">
             <arg line="-rfakeroot"/>
@@ -79,5 +82,24 @@
             </fileset>
         </move>
     </target>
-    <target depends="windows-package,debian-package" name="package" />
+
+    <!-- Mac OS X package -->
+    <target name="osx-package" depends="jar">
+        <mkdir dir="${tmpdir}/osx"/>
+        <taskdef name="jarbundler"
+            classpath="tools/jarbundler-2.2.0/jarbundler-2.2.0.jar" 
+            classname="net.sourceforge.jarbundler.JarBundler"/>
+        <jarbundler verbose="true" showPlist="true"
+            dir="${tmpdir}/osx"
+            name="masumi"
+            mainclass="masumi.Masumi"
+            jar="${jar}"
+            icon="src/masumi/swing/resources/masumi-icon.png"
+            version="${version.num}"/>
+        <zip destfile="${pkgdir}/masumi_${version.num}-osx.zip"
+            basedir="${tmpdir}/osx" />
+    </target>
+
+    <!-- Target for building all the packages -->
+    <target depends="windows-package,debian-package,osx-package" name="package" />
 </project>

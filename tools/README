@@ -24,3 +24,10 @@ Then download the nsis-ant jar file into this directory
 
 http://github.com/downloads/dreese/nsis-ant/nsisant-1.3.jar
 
+Jar Bundler
+-----------
+To build the OS X packages you need to have jar bundler 2.2 installed here.
+You can download the package from http://informagen.com/JarBundler/
+
+Unzip or untar the package into this directory.  
+

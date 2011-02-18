@@ -4,8 +4,11 @@
 bin/
 doc/
 pkg/
+tmp/
 tools/launch4j/
 tools/nsisant-1.3.jar
+tools/jarbundler-2.2.0
 build.num
 debian/masumi
 debian/masumi.debhelper.log
+masumi_*
