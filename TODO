@@ -11,11 +11,6 @@ Masumi TODO List
   please contact me.  Once I've started work on one story, I won't
   change stories until it is done, though.
 
-** TODO Create packaging for OSX [0/2]
-   - [ ] Do this:
-		 http://java.sun.com/developer/technicalArticles/JavaLP/JavaToMac3/
-   - [ ] Create a minimal web page that shows how to install Masumi.
-
 ** TODO Create an Android version [0/1]
    - [ ] Create version that starts on Android.  It should open
 		 a window with nothing on it.  The user should be able
@@ -73,5 +68,11 @@ Masumi TODO List
    - [X] Make a debian package that contains the jar file
 		 and a script that runs the jar file.
    - [X] Make Masumi run from the start menu with an icon.
+   - [X] Create a minimal web page that shows how to install Masumi.
+** DONE Create packaging for OSX [4/4]
+   - [X] Do this:
+		 http://java.sun.com/developer/technicalArticles/JavaLP/JavaToMac3/
+   - [X] Create a Jar bundler Ant task
+   - [X] Create a Zip task
    - [X] Create a minimal web page that shows how to install Masumi.
 
