@@ -1,7 +1,6 @@
 package masumi.contexts;
 
 import masumi.contexts.InteractionFactory;
-import java.net.URL;
 
 /**
  * This is the Main Context.  

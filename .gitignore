@@ -1,7 +1,7 @@
 *.swp
 *~
 .settings/
-bin/
+eclipse-build/
 doc/
 pkg/
 tmp/
