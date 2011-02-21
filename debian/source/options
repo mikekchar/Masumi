@@ -1,3 +1,5 @@
 tar-ignore=tools
 tar-ignore=.git
 tar-ignore=doc
+tar-ignore=windows
+tar-ignore=osx

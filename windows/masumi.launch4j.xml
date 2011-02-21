@@ -1,8 +1,8 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>../tmp/masumi.jar</jar>
-  <outfile>../tmp/masumi.exe</outfile>
+  <jar>../projects/masumi-swing/masumi-swing.jar</jar>
+  <outfile>masumi.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir></chdir>
@@ -12,7 +12,7 @@
   <customProcName>false</customProcName>
   <stayAlive>false</stayAlive>
   <manifest></manifest>
-  <icon>../src/masumi/swing/resources/masumi-icon.ico</icon>
+  <icon>../projects/masumi-swing/src/masumi/swing/resources/masumi-icon.ico</icon>
   <jre>
     <path></path>
     <minVersion>1.6.0</minVersion>

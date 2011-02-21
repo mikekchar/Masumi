@@ -1,6 +1,6 @@
 # define name of installer
 name "Masumi"
-outFile "..\tmp\masumi-win32-installer.exe"
+outFile "masumi-win32-installer.exe"
 
 RequestExecutionLevel admin
 
@@ -31,7 +31,7 @@ section "Masumi"
     setOutPath $INSTDIR
 
     # specify a file to go in the ouput path
-    file "..\tmp\masumi.exe"
+    file "masumi.exe"
 
     # create the uninstaller
     writeUninstaller "$INSTDIR\uninstall-masumi.exe"

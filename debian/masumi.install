@@ -1,5 +1,5 @@
-tmp/masumi.jar usr/share/masumi
-src/masumi/swing/resources/masumi-icon.xpm usr/share/masumi
+projects/masumi-swing/masumi-swing.jar usr/share/masumi
+projects/masumi-swing/src/masumi/swing/resources/masumi-icon.xpm usr/share/masumi
 debian/masumi.desktop /usr/share/applications
-src/masumi/swing/resources/masumi-icon.png usr/share/icons
+projects/masumi-swing/src/masumi/swing/resources/masumi-icon.png usr/share/icons
 

@@ -1,6 +1,7 @@
 package masumi.contexts;
 
 import masumi.contexts.InteractionFactory;
+import java.net.URL;
 
 /**
  * This is the Main Context.  
@@ -28,7 +29,7 @@ public class Main extends Context {
 	public Main(InteractionFactory aFactory) {
 		super(aFactory);
 	}
-	
+
 	@Override
 	public Context.Interaction create_interaction(){
 		return factory.create_interaction(this);

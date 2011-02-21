@@ -1,4 +1,4 @@
-package masumi;
+package masumi.swing;
 
 import masumi.contexts.Context;
 import masumi.contexts.InteractionFactory;

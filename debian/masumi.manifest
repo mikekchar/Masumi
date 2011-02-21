@@ -1,3 +1,3 @@
-usr/share/masumi/masumi.jar:
- Main-Class: masumi.Masumi
+usr/share/masumi/masumi-swing.jar:
+ Main-Class: masumi.swing.Masumi
  Debian-Java-Home: /usr/lib/jvm/java-6-openjdk
