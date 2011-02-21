@@ -11,7 +11,9 @@ Masumi TODO List
   please contact me.  Once I've started work on one story, I won't
   change stories until it is done, though.
 
-** TODO Create an Android version [0/1]
+** TODO Create an Android version [1/2]
+   - [X] Install Android SDK
+   - [ ] Document SDK installation instructions.
    - [ ] Create version that starts on Android.  It should open
 		 a window with nothing on it.  The user should be able
 		 to navigate away from the window.  Android should be able
