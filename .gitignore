@@ -8,6 +8,7 @@ tmp/
 tools/launch4j/
 tools/nsisant-1.3.jar
 tools/jarbundler-2.2.0
+tools/android-sdk-linux_x86
 build.num
 debian/masumi
 debian/masumi.debhelper.log
