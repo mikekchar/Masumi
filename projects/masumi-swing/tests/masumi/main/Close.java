@@ -3,14 +3,16 @@
  */
 package masumi.main;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import masumi.swing.MainInteraction;
+import masumi.swing.SwingFactory;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import test_framework.Story;
-import masumi.swing.MainInteraction;
 
 
 /**
@@ -22,7 +24,7 @@ import masumi.swing.MainInteraction;
 public class Close extends Story {
 	
 	public Close() {
-		super();
+		super(new SwingFactory());
 	}
 	
 	/**

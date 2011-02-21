@@ -1,6 +1,7 @@
 package masumi.startup;
 
 import static org.junit.Assert.assertTrue;
+import masumi.swing.SwingFactory;
 
 import org.junit.After;
 import org.junit.Test;
@@ -15,6 +16,10 @@ import test_framework.Story;
  */
 
 public class Startup extends Story{
+
+	public Startup() {
+		super(new SwingFactory());
+	}
 
 	@After
 	public void tearDown() throws Exception {
