@@ -1,9 +1,8 @@
-package masumi.swing;
+package masumi.contexts;
 
 import masumi.contexts.Context;
 import masumi.contexts.InteractionFactory;
 import masumi.contexts.Main;
-import masumi.swing.SwingFactory;
 
 /**
  * Masumi is the main application.
@@ -76,17 +75,6 @@ public class Masumi extends Context {
 		return isRunning;
 	}
 	
-	/**
-	 * Starts up Masumi using the normal Main Context and the SwingFactory for Swing style widgets.
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		Masumi masumi = new Masumi(new SwingFactory());
-
-		masumi.run();
-	}
-
 	/**
 	 * Masumi has no interaction so it returns null
 	 */

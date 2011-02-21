@@ -74,7 +74,7 @@
         <jarbundler verbose="true" showPlist="true"
             dir="${osxdir}"
             name="masumi"
-            mainclass="masumi.Masumi"
+            mainclass="masumi.swing.MasumiForSwing"
             jar="${swingjar}"
             icon="projects/masumi-swing/src/masumi/swing/resources/masumi-icon.png"
             version="${version.num}"/>

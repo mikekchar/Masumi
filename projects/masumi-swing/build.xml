@@ -43,7 +43,7 @@
             <manifest>
                 <attribute name="Implementation-Version" 
                         value="${version.num}-${build.number}"/>
-                <attribute name="Main-Class" value="masumi.swing.Masumi"/>
+                <attribute name="Main-Class" value="masumi.swing.MasumiForSwing"/>
             </manifest>
             <zipfileset src="../masumi-core/masumi-core.jar"/>
             <fileset dir="${build}"/>

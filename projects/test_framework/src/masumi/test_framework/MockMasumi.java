@@ -1,6 +1,6 @@
 package test_framework;
 
-import masumi.Masumi;
+import masumi.contexts.Masumi;
 import masumi.contexts.InteractionFactory;
 
 /**

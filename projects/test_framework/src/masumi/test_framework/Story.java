@@ -1,8 +1,7 @@
 package test_framework;
 
-import test_framework.MockMasumi;
+import masumi.contexts.InteractionFactory;
 import masumi.contexts.Main;
-import masumi.swing.SwingFactory;
 
 /**
  * Implements a context in which to test Masumi.
@@ -16,8 +15,8 @@ public class Story {
 	private Main mainContext;
 	private Main.Interaction mainInteraction;
 	
-	public Story() {
-		masumi = new MockMasumi(new SwingFactory());
+	public Story(InteractionFactory aFactory) {
+		masumi = new MockMasumi(aFactory);
 		mainContext = null;
 		mainInteraction = null;
 	}
