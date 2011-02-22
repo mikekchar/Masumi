@@ -9,6 +9,11 @@ import masumi.contexts.Main;
  *
  */
 public class SwingFactory implements masumi.contexts.InteractionFactory {
+	
+	@Override
+	public boolean showUI() {
+		return true;
+	}
 
 	@Override
 	public Main.Interaction create_interaction(Main context) {

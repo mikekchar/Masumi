@@ -44,7 +44,7 @@ public abstract class Context {
 	
 	protected boolean entered;
 	protected InteractionFactory factory;
-	public Interaction interaction;
+	protected Interaction interaction;
 	protected Context parent;
 
 	public Context(InteractionFactory aFactory) {
@@ -101,6 +101,20 @@ public abstract class Context {
 			}
 			entered = false;
 		}
+	}
+	
+	/**
+	 * @return the interaction factory for this context
+	 */
+	public InteractionFactory getFactory() {
+		return factory;
+	}
+	
+	/**
+	 * @return the interaction for this context.
+	 */
+	public Interaction getInteraction() {
+		return interaction;
 	}
 
 }

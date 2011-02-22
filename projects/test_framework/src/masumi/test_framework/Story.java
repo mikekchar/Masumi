@@ -26,7 +26,7 @@ public class Story {
 	 */
 	public void run_masumi() {
 		mainContext = (Main)masumi.run();
-		mainInteraction = (Main.Interaction)(mainContext.interaction);
+		mainInteraction = (Main.Interaction)(mainContext.getInteraction());
 	}
 	
 	/**

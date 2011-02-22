@@ -1,12 +1,12 @@
 package masumi.startup;
 
 import static org.junit.Assert.assertTrue;
-import masumi.swing.SwingFactory;
 
 import org.junit.After;
 import org.junit.Test;
 
 import test_framework.Story;
+import masumi.mocks.MockSwingFactory;
 
 /**
  * Story to describe what happens when you start Masumi
@@ -18,7 +18,7 @@ import test_framework.Story;
 public class Startup extends Story{
 
 	public Startup() {
-		super(new SwingFactory());
+		super(new MockSwingFactory());
 	}
 
 	@After

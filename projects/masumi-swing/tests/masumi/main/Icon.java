@@ -5,13 +5,13 @@ package masumi.main;
 
 import static org.junit.Assert.assertTrue;
 import masumi.swing.MainInteraction;
-import masumi.swing.SwingFactory;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import test_framework.Story;
+import masumi.mocks.MockSwingFactory;
 
 
 /**
@@ -23,7 +23,7 @@ import test_framework.Story;
 public class Icon extends Story {
 	
 	public Icon() {
-		super(new SwingFactory());
+		super(new MockSwingFactory());
 	}
 	
 	/**

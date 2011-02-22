@@ -13,6 +13,13 @@ package masumi.contexts;
  */
 public interface InteractionFactory {
 	
+	/**
+	 * There are times (when testing for instance) when we don't want to display the UI to the user.
+	 * This method should be called by open() on the interaction before displaying the UI.
+	 * @return true if the UI should be shown.
+	 */
+	public boolean showUI();
+	
 	public Main.Interaction create_interaction(Main context);
 
 }

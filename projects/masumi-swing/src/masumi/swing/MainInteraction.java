@@ -17,6 +17,7 @@ public class MainInteraction implements Main.Interaction {
 	private JFrame frame;
 	private Main context;
 	public ImageIcon icon;
+	private boolean isOpen;
 	
 	/**
 	 * A Mediator to get events from the JFrame
@@ -45,6 +46,7 @@ public class MainInteraction implements Main.Interaction {
 		frame = new JFrame();
 		context = aContext;
 		icon = null;
+		isOpen = false;
 	}
 	
 	/**
@@ -58,7 +60,8 @@ public class MainInteraction implements Main.Interaction {
 		URL url = getClass().getResource("resources/masumi-icon.png");
 		icon = new ImageIcon(url);
 		frame.setIconImage(icon.getImage());
-		frame.setVisible(true); 
+		frame.setVisible(context.getFactory().showUI());
+		isOpen = true;
 	}
 	
 	public Image get_icon_image() {
@@ -71,13 +74,14 @@ public class MainInteraction implements Main.Interaction {
 	public void close() {
 		frame.setVisible(false);
 		frame.dispose();
+		isOpen = false;
 	}
 
 	/**
 	 * Returns true if the frame is visible.
 	 */
 	public boolean is_open() {
-		return frame.isShowing();
+		return isOpen;
 	}
 
 	/**
