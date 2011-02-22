@@ -21,19 +21,26 @@
         
         <ant dir="projects/masumi-core" target="clean"/>
         <ant dir="projects/masumi-swing" target="clean"/>
+        <ant dir="projects/test_framework" target="clean"/>
     </target>
     <target name="cleanall" depends="clean">
         <delete dir="${pkgdir}"/>
         <ant dir="projects/masumi-core" target="cleanall"/>
         <ant dir="projects/masumi-swing" target="cleanall"/>
+        <ant dir="projects/test_framework" target="cleanall"/>
     </target>
     <target name="compile" depends="init">
         <ant dir="projects/masumi-core" target="compile"/>
         <ant dir="projects/masumi-swing" target="compile"/>
+        <ant dir="projects/test_framework" target="compile"/>
     </target>
     <target name="jar" depends="compile">
         <ant dir="projects/masumi-core" target="jar"/>
         <ant dir="projects/masumi-swing" target="jar"/>
+        <ant dir="projects/test_framework" target="jar"/>
+    </target>
+    <target name="test" depends="compile">
+        <ant dir="projects/masumi-swing" target="test"/>
     </target>
 
     <!-- Windows  package -->
