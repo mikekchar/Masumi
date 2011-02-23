@@ -13,3 +13,4 @@ build.num
 debian/masumi
 debian/masumi.debhelper.log
 masumi_*
+local.properties

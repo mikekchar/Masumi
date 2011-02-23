@@ -22,6 +22,7 @@
         <ant dir="projects/masumi-core" target="clean"/>
         <ant dir="projects/masumi-swing" target="clean"/>
         <ant dir="projects/test_framework" target="clean"/>
+        <ant dir="projects/masumi-android" target="clean"/>
     </target>
     <target name="cleanall" depends="clean">
         <delete dir="${pkgdir}"/>
@@ -33,6 +34,7 @@
         <ant dir="projects/masumi-core" target="compile"/>
         <ant dir="projects/masumi-swing" target="compile"/>
         <ant dir="projects/test_framework" target="compile"/>
+        <ant dir="projects/masumi-android" target="compile"/>
     </target>
     <target name="jar" depends="compile">
         <ant dir="projects/masumi-core" target="jar"/>
