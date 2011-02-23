@@ -116,5 +116,12 @@ public abstract class Context {
 	public Interaction getInteraction() {
 		return interaction;
 	}
+	
+	/**
+	 * @return the parent Context of this Context
+	 */
+	public Context getParent() {
+		return parent;
+	}
 
 }

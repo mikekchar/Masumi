@@ -32,7 +32,7 @@ public class Masumi extends Context {
     }
 	
 	/*
-	 * Creates a new MainContext.  This can be overridden in the tests to allow for mocks.
+	 * Creates a new MainContext.  This can be overridden to setup the context before entering it.
 	 */
 	public Context create_main_context(InteractionFactory factory) {
 		Context context = new Main(factory);

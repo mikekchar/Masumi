@@ -1,5 +1,4 @@
 package masumi.swing;
-import masumi.contexts.InteractionFactory;
 import masumi.contexts.Masumi;
 import masumi.swing.SwingFactory;
 
@@ -11,8 +10,8 @@ import masumi.swing.SwingFactory;
  */
 public class MasumiForSwing extends Masumi {
 	
-	public MasumiForSwing(InteractionFactory aFactory) {
-		super(aFactory);
+	public MasumiForSwing() {
+		super(new SwingFactory());
 	}
 
 	/**
@@ -21,7 +20,7 @@ public class MasumiForSwing extends Masumi {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Masumi masumi = new Masumi(new SwingFactory());
+		Masumi masumi = new MasumiForSwing();
 
 		masumi.run();
 	}
