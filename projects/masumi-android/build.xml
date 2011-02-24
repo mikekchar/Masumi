@@ -47,6 +47,11 @@
 
 <!-- extension targets. Uncomment the ones where you want to do custom work
      in between standard targets -->
+
+<!-- We need to copy the libs we use before we build -->
+    <target name="-pre-compile">
+         <copy file="../masumi-core/masumi-core.jar" todir="libs" />
+    </target>
 <!--
     <target name="-pre-build">
     </target>

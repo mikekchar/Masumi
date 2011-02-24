@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project basedir="." default="jar" name="Masumi">
+<project basedir="." default="test" name="Masumi">
 
     <import file="version.xml"/> 
 
@@ -30,18 +30,20 @@
         <ant dir="projects/masumi-swing" target="cleanall"/>
         <ant dir="projects/test_framework" target="cleanall"/>
     </target>
-    <target name="compile" depends="init">
-        <ant dir="projects/masumi-core" target="compile"/>
-        <ant dir="projects/masumi-swing" target="compile"/>
+    <target name="core" depends="init">
+        <ant dir="projects/masumi-core" target="jar"/>
+    </target>
+    <target name="test_framework" depends="core">
         <ant dir="projects/test_framework" target="compile"/>
+    </target>
+    <target name="swing" depends="core">
+        <ant dir="projects/masumi-swing" target="jar"/>
+    </target>
+    <target name="android" depends="core">
         <ant dir="projects/masumi-android" target="compile"/>
     </target>
-    <target name="jar" depends="compile">
-        <ant dir="projects/masumi-core" target="jar"/>
-        <ant dir="projects/masumi-swing" target="jar"/>
-        <ant dir="projects/test_framework" target="jar"/>
-    </target>
-    <target name="test" depends="compile">
+    <target name="compile" depends="core,test_framework,swing,android"/>
+    <target name="test" depends="test_framework,swing">
         <ant dir="projects/masumi-swing" target="test"/>
     </target>
 
@@ -51,7 +53,7 @@
             classname="net.sf.launch4j.ant.Launch4jTask"
                 classpath="${launch4j.dir}/launch4j.jar
                         :${launch4j.dir}/lib/xstream.jar" />
-    <target name="windows-exe" depends="jar">
+    <target name="windows-exe" depends="swing">
         <launch4j configFile="windows/masumi.launch4j.xml" />
     </target>
     <taskdef name="nsis" classname="com.danielreese.nsisant.Task"
@@ -63,7 +65,9 @@
     </target>
 
     <!-- Debian package -->
-    <target name="debian-package" depends="jar">
+    <!-- It seems DH depends on a target called jar to build the jar -->
+    <target name="jar" depends="swing"/>
+    <target name="debian-package" depends="swing">
         <exec dir="${basedir}" executable="dpkg-buildpackage">
             <arg line="-rfakeroot"/>
         </exec>
@@ -75,7 +79,7 @@
     </target>
 
     <!-- Mac OS X package -->
-    <target name="osx-package" depends="jar">
+    <target name="osx-package" depends="swing">
         <mkdir dir="${osxdir}"/>
         <taskdef name="jarbundler"
             classpath="tools/jarbundler-2.2.0/jarbundler-2.2.0.jar" 
