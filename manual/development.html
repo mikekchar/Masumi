@@ -1,0 +1,128 @@
+<html>
+  <head>
+	<title>Development on Masumi</title>
+  </head>
+  <body>
+	<h1>Releases</h1>
+	<p>
+	  Development on Masumi is organized by "stories".  The
+	  stories are listed in the TODO document in the
+	  main development tree of Masumi.  A story is a minimal
+	  set of user functionality.  It should take no more than
+	  8 hours of work to implement a story.  At the end of
+	  the story, the code is meant to be releasable.  This means
+	  that it contains all the functionality that is necessary
+	  for a user to what the stories entailed.
+	</p>
+	<p>
+	  Even though Masumi is releasable after every story, we
+	  may not want to make a public release.  It might not be
+	  internally consistent from a user's point of view.  For
+	  instance, we may have implemented a "Save" function, but
+	  no "Load" function.  Because of this, we have a concept of
+	  "public releases".  A public release is a release containing
+	  a set of stories that is internally consistent.  We want to
+	  make public releases as often and as early as possible.  This
+	  allows ordinary users to contribute to the development process.
+	</p>
+	<p>
+	  Even though every public release is internally consistent,
+	  it may not contain enough valuable features to really merit
+	  upgrading.  When we have made enough releases that we
+	  want to recommend that the user upgrade, we will make a
+	  "major release".  A major release is complete, consistent
+	  and contains signigicant user value.  We should try to
+	  time major releases to the user's expectations.  They may
+	  not want to upgrade too frequently.  But on the other hand,
+	  we want to get valuable improvements into the user's hands
+	  as quickly as possible.
+	</p>
+	<p>
+	  In addition to "public releases" and "major releases", we
+	  may have to release a "patch release".  This happens when
+	  a major release has a significant problem that must be fixed.
+	  We may not want to create a new major release based on
+	  the last public release since it may contain functionality
+	  that we don't want to have in a major release yet.  Instead
+	  we will make a "patch" release based on the last major release.
+	  Public releases will not have patch releases, but we will
+	  fix the problem and create a new public release as soon as
+	  possible.  We will try to avoid making patch releases.
+	</p>
+	<h1>Understanding Version Numbers</h1>
+	<p>
+	  Masumi version numbers are of the form X.Y.Z.  X is the
+	  number of the last major release.  Y is the number of the
+	  last public release for that major release.  Z is the number
+	  of the last patch release.
+	</p>
+	<p>
+	  For example, 1.2.0 means the first major release and
+	  the second public release.  1.0.0 is the first major release.
+	  3.0.2 is the second pactch release of the 3rd major release.
+	  There will never be a release like 1.2.3 because patch releases
+	  only happen for major releases.
+	</p>
+	<p>
+	  The very first version number should be 0.1.0.  To make
+	  new public release, tag the source code in git with the
+	  current version number.  Then increment the second digit
+	  and check it in.  This means that all stories for the next
+	  public release will contain that version number.  But it
+	  is not a public build until it is tagged in git.
+	</p>
+	<p>
+	  To make a new major release, increment the first digit and
+	  set the next digits to 0.  Check the change into git
+	  and tag it with the new version number.  Then increment
+	  the second digit as before.
+	</p>
+	<p>
+	  To make a new patch release, make a branch in git of
+	  the last tagged patch release.  If there is no patch release
+	  for this major version, branch the major version.  Make
+	  the required changes, increment the third digit of the
+	  version number and check it into git.  Finally tag the
+	  branch with the resultant version number.
+	</p>
+	<p>
+	  Sometimes you need to make a private release based on
+	  the current source code.  In this case, please leave the
+	  version number as it is, but rename the resultant package
+	  to make it obvious that it is a private release.  If
+	  you plan to make several, you should use a keyword associated
+	  with the build machine and then use the build.num file
+	  to indicate what build it is.  I will write more details
+	  here when I implement automatic nightly builds.
+	</p>
+	<h1>Digitally Signing Releases</h1>
+	<p>
+	  On some platforms (Android for instance) the released
+	  packages must be digitally signed.  To make matters
+	  more complicated, you may not be able to upgrade
+	  smoothly between two packages signed by different people.
+	  This being the case, there will be a private signing
+	  key available to members of the team that are resposnsible
+	  for making builds.
+	</p>
+	<p>
+	  It is very, very important that this key does not get revealed
+	  to anyone except certain members of the team.  If it does,
+	  then anyone can sign our releases and possibly put
+	  viruses in, etc.  Thus the key will only be available
+	  to people who directly make builds.  Please don't be
+	  offended if you request the key and are denied.  It is
+	  only necessary for signing official releases.
+	</p>
+	<p>
+	  I will write more information here as I develop the
+	  code for making the Android builds.  I have been thinking
+	  about it and the more I do, the more I want to sign
+	  other builds as well (and possibly even the source code).
+	  But I need more time to think about it.
+	</p>
+	<address>
+	  <a href="mailto:mikekchar@gmail.com">Mike Charlton</a>
+	</address>
+  </body>
+</html>

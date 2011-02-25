@@ -11,18 +11,31 @@ Masumi TODO List
   please contact me.  Once I've started work on one story, I won't
   change stories until it is done, though.
 
-** TODO Create an Android version [1/2]
+** TODO Create an Android version [3/5]
    - [X] Install Android SDK
-   - [ ] Document SDK installation instructions.
-   - [ ] Create version that starts on Android.  It should open
+   - [X] Create version that starts on Android.  It should open
 		 a window with nothing on it.  The user should be able
 		 to navigate away from the window.  Android should be able
 		 to suspend or close the app any time it wants.  There is
 		 no exit option.
+   - [X] Create Ant build process.
+   - [ ] Create tests that can be run on Android including from Ant.
+   - [ ] Document SDK installation instructions.
 
-** TODO Create packaging for Android [0/2]
+** TODO Create packaging for OSX [4/5]
+   - [X] Do this:
+		 http://java.sun.com/developer/technicalArticles/JavaLP/JavaToMac3/
+   - [X] Create a Jar bundler Ant task
+   - [X] Create a Zip task
+   - [X] Create a minimal web page that shows how to install Masumi.
+   - [ ] This will not install on OS X for some reason.
+
+** TODO Create packaging for Android [0/3]
    - [ ] Create a package that can be downloaded and installed on
 		 Android.
+   - [ ] Create a signing key for the project and sign the release
+         build as part of the build process.  Create a release management
+		 process.
    - [ ] Create a minimal web page that installs Masumi.
 
 ** TODO Find a better icon for Masumi [2/3]
@@ -71,10 +84,3 @@ Masumi TODO List
 		 and a script that runs the jar file.
    - [X] Make Masumi run from the start menu with an icon.
    - [X] Create a minimal web page that shows how to install Masumi.
-** DONE Create packaging for OSX [4/4]
-   - [X] Do this:
-		 http://java.sun.com/developer/technicalArticles/JavaLP/JavaToMac3/
-   - [X] Create a Jar bundler Ant task
-   - [X] Create a Zip task
-   - [X] Create a minimal web page that shows how to install Masumi.
-
