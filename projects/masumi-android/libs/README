@@ -1,0 +1,3 @@
+External libraries required for masumi-android go here.
+Right now we are copying the masumi-core jar file
+here during the build.
