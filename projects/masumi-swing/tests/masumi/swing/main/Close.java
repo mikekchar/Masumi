@@ -1,18 +1,18 @@
 /**
  * 
  */
-package masumi.main;
+package masumi.swing.main;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import masumi.swing.MainInteraction;
+import masumi.swing.mocks.MockSwingFactory;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import test_framework.Story;
-import masumi.mocks.MockSwingFactory;
 
 /**
  * Story to describe what happens when you close Masumi

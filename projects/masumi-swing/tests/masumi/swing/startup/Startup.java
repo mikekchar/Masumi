@@ -1,4 +1,4 @@
-package masumi.startup;
+package masumi.swing.startup;
 
 import static org.junit.Assert.assertTrue;
 
@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Test;
 
 import test_framework.Story;
-import masumi.mocks.MockSwingFactory;
+import masumi.swing.mocks.MockSwingFactory;
 
 /**
  * Story to describe what happens when you start Masumi

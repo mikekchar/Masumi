@@ -1,4 +1,4 @@
-package masumi.mocks;
+package masumi.swing.mocks;
 
 import masumi.swing.SwingFactory;
 
