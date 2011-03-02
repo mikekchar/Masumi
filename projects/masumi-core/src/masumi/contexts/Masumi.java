@@ -16,8 +16,7 @@ import masumi.contexts.Main;
  */
 public class Masumi extends Context {
 	
-	private boolean isRunning;
-
+	protected boolean isRunning;
 	
 	public Masumi(InteractionFactory aFactory) {
 		super(aFactory);

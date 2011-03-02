@@ -14,3 +14,4 @@ debian/masumi
 debian/masumi.debhelper.log
 masumi_*
 local.properties
+projects/masumi-android/libs/*.jar

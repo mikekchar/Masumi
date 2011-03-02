@@ -15,5 +15,10 @@ public class MasumiForAndroid extends Masumi {
 	public Activity getMainActivity() {
 		return mainActivity;
 	}
+	
+	@Override
+	public void exit_system() {
+		isRunning = false;
+	}
 
 }

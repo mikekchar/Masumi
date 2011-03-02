@@ -35,6 +35,10 @@ public class MainInteraction implements Interaction {
 	public boolean is_open() {
 		return isOpen;
 	}
+	
+	public void request_closure() {
+		context.exit();
+	}
 
 
 }

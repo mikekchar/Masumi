@@ -6,13 +6,17 @@
 
 
     <application android:icon="@drawable/icon" android:label="@string/app_name">
-        <activity android:name=".MasumiActivity"
+        <activity android:name="MasumiActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <uses-library android:name="android.test.runner"/>
     </application>
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+                     android:targetPackage="masumi.android"
+                     android:label="Masumi tests"/>
+
 </manifest>
