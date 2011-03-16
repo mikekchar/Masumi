@@ -41,6 +41,8 @@
         <pathelement path="${sdk.dir}/tools/lib/androidprefs.jar" />
     </path>
 
+    <import file="${sdk.dir}/tools/ant/test_rules.xml" /> 
+
     <taskdef name="setup"
         classname="com.android.ant.SetupTask"
         classpathref="android.antlibs" />
