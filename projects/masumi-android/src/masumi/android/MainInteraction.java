@@ -1,7 +1,7 @@
 package masumi.android;
 
+import masumi.android.R;
 import android.app.Activity;
-import android.widget.TextView;
 import masumi.contexts.Main;
 import masumi.contexts.Main.Interaction;
 
@@ -21,9 +21,7 @@ public class MainInteraction implements Interaction {
 	public void open() {
 		isOpen = true;
 		mainActivity = ((MasumiForAndroid)context.getParent()).getMainActivity();
-		TextView tv = new TextView(mainActivity);
-		tv.setText("Hello, Android");
-		mainActivity.setContentView(tv);
+		mainActivity.setContentView(R.layout.main);
 	}
 
 	@Override
