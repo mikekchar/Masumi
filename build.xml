@@ -85,6 +85,7 @@
             classpath="tools/jarbundler-2.2.0/jarbundler-2.2.0.jar" 
             classname="net.sourceforge.jarbundler.JarBundler"/>
         <jarbundler verbose="true" showPlist="true"
+            stubfile="${osxdir}/JavaApplicationStub"
             dir="${osxdir}"
             name="masumi"
             mainclass="masumi.swing.MasumiForSwing"
