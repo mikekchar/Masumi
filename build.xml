@@ -4,7 +4,7 @@
     <import file="version.xml"/> 
 
     <property name="pkgdir" location="masumi_${version.num}"/>
-    <property name="swingjar" location="projects/masumi-swing/masumi.jar"/>
+    <property name="swingjar" location="projects/masumi-swing/masumi-swing.jar"/>
     <property name="debiandir" location="debian"/> 
     <property name="windowsdir" location="windows"/> 
     <property name="osxdir" location="osx"/> 
