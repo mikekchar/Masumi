@@ -19,14 +19,6 @@ Masumi TODO List
    - [X] Create a minimal web page that shows how to install Masumi.
    - [ ] This will not install on OS X for some reason.
 
-** TODO Create packaging for Android [0/3]
-   - [ ] Create a package that can be downloaded and installed on
-		 Android.
-   - [ ] Create a signing key for the project and sign the release
-         build as part of the build process.  Create a release management
-		 process.
-   - [ ] Create a minimal web page that installs Masumi.
-
 ** TODO Create packaging for WebStart [0/2]
    Webstart is a way to distribute applications for any Java platform
    using the web.  The person simply clicks a link on a web page and
@@ -84,4 +76,13 @@ Masumi TODO List
    - [X] Create Ant build process.
    - [X] Create tests that can be run on Android including from Ant.
    - [X] Document SDK installation instructions.
+
+** DONE Create packaging for Android [3/3]
+   - [X] Create a package that can be downloaded and installed on
+		 Android.
+   - [X] Create a signing key for the project and sign the release
+         build as part of the build process.  Create a release management
+		 process.
+   - [X] Create an ant target to copy the Android release package
+         into the package directory.
 

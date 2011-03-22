@@ -95,6 +95,13 @@
             basedir="${osxdir}" />
     </target>
 
+    <!-- Android package -->
+    <target name="android-package" depends="android">
+        <ant dir="projects/masumi-android" target="release"/>
+        <copy file="projects/masumi-android/build/masumi-android-release.apk"
+            tofile="${pkgdir}/masumi_${version.num}.apk"/>
+    </target>
+
     <!-- Target for building all the packages -->
-    <target depends="windows-package,debian-package,osx-package" name="package" />
+    <target depends="windows-package,debian-package,osx-package,android-package" name="package" />
 </project>

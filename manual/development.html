@@ -94,7 +94,31 @@
 	  with the build machine and then use the build.num file
 	  to indicate what build it is.  I will write more details
 	  here when I implement automatic nightly builds.
-	</p>
+      </p>
+    <h1>Setting the Version Number</h1>
+    <p>
+      There are three places where you must set the version number.
+      The first is in the version.xml file in the main Masumi
+      distribution.  Please set this to the human readable
+      number described above.
+    </p>
+    <p>
+      The second place is in the projects/masumi-android directory
+      in the AndroidManifest.xml file.  There are two properties
+      you must set.  the android:versionName is set to the
+      human readable version described above.  The versionCode
+      is set to an integer equalling 10,000 times the Major
+      release number, 100 times the Public release number and
+      1 times the patch number.  This gives us the ability to
+      release 99 patches.  It is rather stupid that Google didn't
+      realize that someone might want to run a patched old version
+      of a release. An example would be 3.1.0 = 30100.  5.0.5 = 50001.
+    </p>
+    <p>
+      The third place is in the debian directory in the changlog file.
+      Simply make a changelog entry with the human readable version
+      number.  The comment can be "New release" or something similar.
+    </p>
 	<h1>Digitally Signing Releases</h1>
 	<p>
 	  On some platforms (Android for instance) the released
