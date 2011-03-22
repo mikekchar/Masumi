@@ -1,0 +1,46 @@
+In order to develop masumi-android you will need to install
+the Android SDK.  Instructions for doing this are here:
+http://developer.android.com/sdk/installing.html
+
+I recommend installing the SDK in the tools directory of the
+main Masumi distribution, but it should work anywhere.
+
+After the SDK, you will also need to update the project
+so that all the scripts know where to find the SDK.  You
+do this by typing the following from the masumi-android
+directory:
+
+android update project --name masumi-android --target 3 --path .
+
+The android executable is in the tools directory of the SDK.
+
+You can build using the Eclipse plugin, or you can build using
+the ant script. 
+
+ant debug
+
+will build the debug release.  In order to run it, you need to have an
+emulator running.  Running "android" with no options will give you a list
+of possible emulators.  Once the emulator is running, you have to
+install the apk file on the emulator:
+
+adb install build/masumi-android-debug.apk
+
+adb is in the platform-tools directory of the SDK.
+
+You may find that the executable already exists on the device, so before 
+installing it again, you will simply have to uninstall it using the
+UI on the emulator (probably there is a way to do this with the adb
+tool too, but I haven't tried).
+
+Finally, to run the tests simple do
+
+ant run-tests
+
+Note: masumi-android requires that masumi-core is built and copied
+into the masumi-android/libs directory.  To do that simply run
+
+ant compile
+
+from the main Masumi distribution.
+ 
