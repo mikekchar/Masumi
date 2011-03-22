@@ -11,13 +11,120 @@ Masumi TODO List
   please contact me.  Once I've started work on one story, I won't
   change stories until it is done, though.
 
-** TODO Create packaging for OSX [4/5]
-   - [X] Do this:
-		 http://java.sun.com/developer/technicalArticles/JavaLP/JavaToMac3/
-   - [X] Create a Jar bundler Ant task
-   - [X] Create a Zip task
-   - [X] Create a minimal web page that shows how to install Masumi.
-   - [ ] This will not install on OS X for some reason.
+** TODO Enter Japanese
+   The user types Japanese and it is displayed on the screen.
+   The text should wrap if it gets to the edge of the screen.
+   On the Desktop:
+     If it takes up too much vertical space, there should be a vertical
+     slider.  If the user deletes text such that it all fits on one
+     screen the vertical slider should be removed.
+   On Android:
+     There is no veritcal slider.  If the user uses up to much vertical
+     space, the user can scroll the window as normal.  If the user deletes
+     text such that it all fits on on screen then the user can't scroll
+     the window any more.
+
+** TODO Zoom display
+    The user can zoom the display such that the characters on the screen
+    look bigger.  This is important for people unused to kanji so that
+    they can increase the font size to be able to see the characters
+    clearly, and then decrease the zoom to be able to read comfortably.
+    The sentence should re-wrap so that horizontal scrolling is not 
+    necessary.  The character in the upper left hand corner should be the
+    same character while zooming in and zooming out.
+    On the Desktop:
+      I don't know what the UI should look like!!!  FIX ME!!!
+    On Android:
+      Use the zoom gesture to zoom in and out.
+ 
+** TODO Open a window to inspect characters
+   Create a mode where a user can get a closer look at a character.
+   The user can open an information window.  Then when the mouse
+   cursor (or user's finger on Android) is over a character display
+   a large version of that character in the information window.
+   On the Desktop:
+     The user clicks the mouse button to open the window.  After that,
+     when the mouse hovers over a new character, it is displayed in the
+     window.  If the user clicks again, the window is closed.
+   On Android:
+     The user presses and holds to open the window.  After that,
+     when the finger is over a new character, it is displayed in the window.
+     If the user removes their finger from the display, the window is
+     closed.
+
+** TODO Display Readings and Radical information in the information window
+   When the user is inspecting a character, show the readings and radical
+   information for that character.
+
+** TODO Dictionary Lookup Mode
+   Introduce a new mode for the information window.  If the user does
+   something (to be determined), the information switches between showing
+   the character and readings, to doing a lookup  in a dictionary for
+   the word under the mouse, finger.  This works excactly the same as
+   it does in JLDrill (need to type the details into this story).
+   Note that this does NOT include deinflection of verbs/adjectives!
+   If the word is found, the reading, canonical writing form and
+   English definitions are given in the information window.  If no word
+   is found, the character will be displayed as if in character lookup
+   mode.
+
+** TODO Deinflection of Verbs/adjectives in Dictionary Loop up
+   Deinflect verbs for look up just like in JLDrill.  Display the grammar
+   rule that was used in the deinflection.
+
+** TODO Allow user to choose readings for characters
+   When the information window is open, allow the user to choose
+   specifically which reading to display for the character (not sure
+   how the UI should work, especially on Android).  Next time the
+   user displays the information for the character, display only that
+   reading.  Make it obvious that the user has chosen this reading
+   and allow them to cancel the choice later.
+
+** TODO Allow user to choose definitions for words
+   Allow the user to choose which definition from the word look up
+   to display when showing it in the information window.  Next time
+   the user displays the information for the word, display only
+   that definition.  Make it obvious that the user has chosen this
+   definition and allow them to cancel the choice later.
+
+** TODO Allow the user to enter an English meaning for the Japanese entry
+   UI completely unknown :-)  Allow the user to enter an English meaning
+   for the Japanese entry that they have now.
+
+** TODO Save As/Load the entry
+   Allow the user to save a single entry to a file.  The file format will
+   be compatible with the Tanaka corpus if at all possible.  The user
+   is prompted to enter a filename when first saving. The user can load
+   the file back.
+
+** TODO Autosave
+   Autosave the file whenever anything is changed.  I'm not so fond of
+   this, but I think it is necessary for Android.  I may change this
+   story.
+
+** TODO Display Stroke Order
+   Display the stroke order for a character in the information window.
+   Probably just by using a custom font (although this may actually be
+   quite difficult, so I may change my mind...)
+
+** TODO Allow installation on older Mac OSX versions [0/2]
+   JavaApplicationStub is part of the Mac Java installation, but
+   it needs to be copied or linked to the application package.
+   At the moment I have packaged a copy of it in the installation,
+   but this means that if the user has an older (or newer... although
+   this will never happen because Apple is discontinuing distributing
+   Java) version of the OS, it will fail to run.  Thus the app
+   currently only runs on the current version of Mac OSX.  If we
+   create an installer for the package, we can create a symbolic
+   link from the Java installation (luckily in only one place) to
+   the application at install time.
+   - [ ] Find a package installer
+   - [ ] In the post install link JavaApplicationInstall from the user's
+         Java installation into the app.
+
+** TODO JLDrill drill functionality.
+   Actually, I need to write a lot of stories, but this is a place holder
+   just so everybody knows what I'm planning.
 
 ** TODO Create packaging for WebStart [0/2]
    Webstart is a way to distribute applications for any Java platform
@@ -26,9 +133,10 @@ Masumi TODO List
    - [ ] Create a webstart application
    - [ ] Create a minimal web page that installs Masumi.
 
-** After this point all functionality must work on Linux, Window, MacOS
-   and Android before it is set to "done".  I wonder if that means I have
-   to buy a Mac... Sigh...
+** TODO Allow the user to view Chinese information for characters
+   The data in the kanji characters also contain pinyin.  Create an
+   option to allow the user to view that information instead of
+   the Japanese information.
 
 
 * Completed Stories for Version 0.1.0
@@ -85,4 +193,12 @@ Masumi TODO List
 		 process.
    - [X] Create an ant target to copy the Android release package
          into the package directory.
+
+** DONE Create packaging for OSX [5/5]
+   - [X] Do this:
+		 http://java.sun.com/developer/technicalArticles/JavaLP/JavaToMac3/
+   - [X] Create a Jar bundler Ant task
+   - [X] Create a Zip task
+   - [X] Create a minimal web page that shows how to install Masumi.
+   - [X] Copy JavaApplicationStub into app package
 
