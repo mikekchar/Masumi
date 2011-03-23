@@ -13,7 +13,7 @@ import masumi.contexts.InteractionFactory;
  *
  */
 public abstract class Context {
-
+	
 	/**
 	 * This represents the information or actions that can be sent to or from a user.
 	 * Generally speaking an interaction will be associated with one or more
@@ -36,10 +36,14 @@ public abstract class Context {
 	 * @author Mike Charlton
 	 *
 	 */
-	protected interface Interaction {
+	public interface Interaction {
 		public void open();
 		public void close();
 		public boolean is_open();
+		public void add(Interaction anInteraction);
+		public void remove(Interaction anInteraction);
+		public Widget getWidget();
+		public boolean contains(Interaction anInteraction);
 	}
 	
 	protected boolean entered;

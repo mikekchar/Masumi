@@ -24,14 +24,26 @@ public class Main extends Context {
 	public interface Interaction extends Context.Interaction{
 		// Nothing to do
 	}
+
+	/* The Main Context is composed of the following sub-contexts */
+	public ExploreProblem exploreProblem;
 	
 	public Main(InteractionFactory aFactory) {
 		super(aFactory);
+		exploreProblem = new ExploreProblem(aFactory);
 	}
 
 	@Override
 	public Context.Interaction create_interaction(){
 		return factory.create_interaction(this);
+	}
+	
+	@Override
+	public void enter(Context aParent){
+		super.enter(aParent);
+		
+		// The exploreProblem context is entered automatically
+		exploreProblem.enter(this);
 	}
 	
 	/**
@@ -40,6 +52,8 @@ public class Main extends Context {
 	@Override 
 	public void exit(){
 		super.exit();
+		
+		exploreProblem.exit();
 		parent.exit();
 	}
 

@@ -1,7 +1,5 @@
-/**
- * 
- */
-package masumi.swing.main;
+package masumi.swing.exploreProblem;
+
 
 import static org.junit.Assert.*;
 import masumi.swing.MainInteraction;
@@ -13,16 +11,15 @@ import org.junit.Test;
 
 import test_framework.Story;
 
-
 /**
- * Story to describe what happens when you close Masumi
+ * Story to describe what happens when we start exploring a problem
  * 
  * @author Mike Charlton
  *
  */
-public class Icon extends Story {
+public class Open extends Story {
 	
-	public Icon() {
+	public Open() {
 		super(new MockSwingFactory());
 	}
 	
@@ -32,7 +29,7 @@ public class Icon extends Story {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		run_masumi();
+		this.run_masumi();
 	}
 
 	/**
@@ -45,15 +42,18 @@ public class Icon extends Story {
 	}
 
 	/**
-	 * Masumi should have an icon in the main interaction.
+	 * The main interaction widget should contain the problem text widgets
 	 */
 	@Test
-	public void the_Main_Interaction_displays_an_icon() {
+	public void opening_Masumi_adds_the_problem_widgets() {
 		// When
-		assertTrue(masumi().is_running());
+		assertTrue(this.masumi().is_running());
+		MainInteraction main = (MainInteraction)main_interaction();
 		
 		// It should
-		assertTrue(((MainInteraction)main_interaction()).get_icon_image() != null);
+		assertTrue(main_context().is_entered());
+		assertTrue(main.is_open());
+		assertTrue(main_context().exploreProblem.is_entered());
 	}
 
 }

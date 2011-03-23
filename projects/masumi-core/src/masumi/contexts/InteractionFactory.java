@@ -21,5 +21,6 @@ public interface InteractionFactory {
 	public boolean showUI();
 	
 	public Main.Interaction create_interaction(Main context);
+	public ExploreProblem.Interaction create_interaction(ExploreProblem context);
 
 }

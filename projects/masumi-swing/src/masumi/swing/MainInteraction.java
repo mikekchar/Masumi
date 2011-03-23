@@ -1,79 +1,51 @@
 package masumi.swing;
 
 import java.awt.Image;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowAdapter;
-import java.net.URL;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-
+import masumi.contexts.Context;
+import masumi.contexts.InteractionFactory;
 import masumi.contexts.Main;
+import masumi.contexts.Widget;
+import masumi.swing.widgets.MainWindow;
+
 /*
  * This is the main window for the application.
  */
 public class MainInteraction implements Main.Interaction {
 
-	private JFrame frame;
-	private Main context;
-	public ImageIcon icon;
+	public Main context;
+	private InteractionFactory factory;
 	private boolean isOpen;
+	private MainWindow widget;
 	
-	/**
-	 * A Mediator to get events from the JFrame
-	 * 
-	 * @author Mike Charlton
-	 *
-	 */
-	private class FrameMediator extends WindowAdapter {
-		private MainInteraction interaction;
-		
-		FrameMediator(MainInteraction theInteraction) {
-			interaction = theInteraction;
-		}
-		
-		/**
-		 * The windowClosing event simply requests that the interaction close
-		 */
-		@Override
-		public void windowClosing(WindowEvent arg0) {
-			interaction.request_closure();
-		}
-		
+
+	public MainInteraction(Main aContext, InteractionFactory aFactory) {
+		factory = aFactory;
+		context = aContext;
+		isOpen = false;
+		widget = new MainWindow(this);
+	}
+	
+	public boolean showUI() {
+		return factory.showUI();
 	}
 
-	public MainInteraction(Main aContext) {
-		frame = new JFrame();
-		context = aContext;
-		icon = null;
-		isOpen = false;
-	}
-	
 	/**
 	 * Open the Main window frame.
 	 */
 	public void open() {
-		frame.setSize(300,400);
-		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		frame.addWindowListener(new FrameMediator(this));
-		frame.setTitle("Masumi");
-		URL url = getClass().getResource("resources/masumi-icon.png");
-		icon = new ImageIcon(url);
-		frame.setIconImage(icon.getImage());
-		frame.setVisible(context.getFactory().showUI());
 		isOpen = true;
 	}
 	
 	public Image get_icon_image() {
-		return frame.getIconImage();
+		return widget.getIconImage();
 	}
 	
 	/**
 	 * Actually close the window.
 	 */
 	public void close() {
-		frame.setVisible(false);
-		frame.dispose();
+		widget.setVisible(false);
+		widget.dispose();
 		isOpen = false;
 	}
 
@@ -92,5 +64,26 @@ public class MainInteraction implements Main.Interaction {
 	 */
 	public void request_closure() {
 		context.exit();
+	}
+
+	@Override
+	public void add(Context.Interaction anInteraction) {
+		getWidget().add(anInteraction.getWidget());
+	}
+
+	@Override
+	public boolean contains(Context.Interaction anInteraction) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Widget getWidget() {
+		return widget;
+	}
+
+	@Override
+	public void remove(Context.Interaction anInteraction) {
+		getWidget().remove(anInteraction.getWidget());
 	}
 }
