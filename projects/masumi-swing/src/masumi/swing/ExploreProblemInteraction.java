@@ -3,13 +3,18 @@ package masumi.swing;
 import masumi.contexts.Context;
 import masumi.contexts.ExploreProblem;
 import masumi.contexts.Widget;
+import masumi.swing.widgets.Problem;
 
 public class ExploreProblemInteraction implements ExploreProblem.Interaction {
 
 	public ExploreProblem context;
+	private boolean isOpen;
+	private Problem problem;
 	
 	public ExploreProblemInteraction(ExploreProblem aContext) {
 		context = aContext;
+		isOpen = false;
+		problem = new Problem();
 	}
 
 	/**
@@ -17,8 +22,8 @@ public class ExploreProblemInteraction implements ExploreProblem.Interaction {
 	 */
 	@Override
 	public void close() {
-		// TODO Auto-generated method stub
-
+		problem.setVisible(false);
+		isOpen = false;
 	}
 
 	/**
@@ -26,8 +31,7 @@ public class ExploreProblemInteraction implements ExploreProblem.Interaction {
 	 */
 	@Override
 	public boolean is_open() {
-		// TODO Auto-generated method stub
-		return false;
+		return isOpen;
 	}
 
 	/**
@@ -35,32 +39,27 @@ public class ExploreProblemInteraction implements ExploreProblem.Interaction {
 	 */
 	@Override
 	public void open() {
-		// TODO Auto-generated method stub
-
+		problem.setVisible(true);
 	}
 
 	@Override
 	public void add(Context.Interaction anInteraction) {
-		// TODO Auto-generated method stub
-		
+		// Don't do anything
 	}
 
 	@Override
 	public boolean contains(Context.Interaction anInteraction) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public Widget getWidget() {
-		// TODO Auto-generated method stub
-		return null;
+		return problem;
 	}
 
 	@Override
 	public void remove(masumi.contexts.Context.Interaction anInteraction) {
-		// TODO Auto-generated method stub
-		
+		// Don't do anything
 	}
 
 }

@@ -2,6 +2,7 @@ package masumi.swing.exploreProblem;
 
 
 import static org.junit.Assert.*;
+import masumi.contexts.ExploreProblem;
 import masumi.swing.MainInteraction;
 import masumi.swing.mocks.MockSwingFactory;
 
@@ -49,11 +50,13 @@ public class Open extends Story {
 		// When
 		assertTrue(this.masumi().is_running());
 		MainInteraction main = (MainInteraction)main_interaction();
+		ExploreProblem exploreProblem = main_context().exploreProblem;
 		
 		// It should
 		assertTrue(main_context().is_entered());
 		assertTrue(main.is_open());
-		assertTrue(main_context().exploreProblem.is_entered());
+		assertTrue(exploreProblem.is_entered());
+		assertTrue(main.contains(exploreProblem.getInteraction()));
 	}
 
 }

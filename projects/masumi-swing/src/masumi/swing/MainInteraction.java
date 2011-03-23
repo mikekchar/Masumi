@@ -73,8 +73,7 @@ public class MainInteraction implements Main.Interaction {
 
 	@Override
 	public boolean contains(Context.Interaction anInteraction) {
-		// TODO Auto-generated method stub
-		return false;
+		return getWidget().contains(anInteraction.getWidget());
 	}
 
 	@Override

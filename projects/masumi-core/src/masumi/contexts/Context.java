@@ -84,6 +84,9 @@ public abstract class Context {
 		parent = aParent;
 		if (interaction != null) {
 			interaction.open();
+			if (parent.interaction != null) {
+				parent.interaction.add(interaction);
+			}
 		}
 	}
 
@@ -101,6 +104,9 @@ public abstract class Context {
 	public void exit() {
 		if (is_entered()) {
 			if(interaction != null) {
+				if (parent.interaction != null) {
+					parent.interaction.remove(interaction);
+				}
 				interaction.close();
 			}
 			entered = false;

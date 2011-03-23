@@ -1,5 +1,6 @@
 package masumi.swing.widgets;
 
+import java.awt.Component;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.net.URL;
@@ -56,14 +57,25 @@ public class MainWindow extends JFrame implements Widget{
 
 	@Override
 	public void add(Widget aWidget) {
-		// TODO Auto-generated method stub
-		
+		this.getContentPane().add((Component) aWidget);
 	}
 
 	@Override
 	public void remove(Widget aWidget) {
-		// TODO Auto-generated method stub
-		
+		this.getContentPane().remove((Component)aWidget);
+	}
+
+	@Override
+	public boolean contains(Widget widget) {
+		boolean retVal = false;
+		Component[] components = this.getContentPane().getComponents();
+		for(int i = 0; i < components.length; i++) {
+			if (components[i] == (Component)widget) {
+				retVal = true;
+				break;
+			}
+		}
+		return retVal;
 	}
 	
 }

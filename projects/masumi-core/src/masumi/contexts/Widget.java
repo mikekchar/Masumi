@@ -15,4 +15,5 @@ package masumi.contexts;
 public interface Widget {
 	public void add(Widget aWidget);
 	public void remove(Widget aWidget);
+	public boolean contains(Widget widget);
 }
