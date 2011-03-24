@@ -9,6 +9,7 @@ public class Problem extends TextView implements Widget {
 	
 	public Problem(ExploreProblemInteraction anInteraction) {
 		super(anInteraction.getApplicationContext());
+		setText("Welcome to Masumi!");
 	}
 
 	@Override
