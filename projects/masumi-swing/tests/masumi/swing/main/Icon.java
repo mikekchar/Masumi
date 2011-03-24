@@ -31,8 +31,8 @@ public class Icon extends Story {
 	 * @throws java.lang.Exception
 	 */
 	@Before
-	public void setUp() throws Exception {
-		run_masumi();
+	public void before() throws Exception {
+		setUp();
 	}
 
 	/**
@@ -40,8 +40,8 @@ public class Icon extends Story {
 	 * @throws java.lang.Exception
 	 */
 	@After
-	public void tearDown() throws Exception {
-		reset();
+	public void after() throws Exception {
+		tearDown();
 	}
 
 	/**
@@ -50,10 +50,10 @@ public class Icon extends Story {
 	@Test
 	public void the_Main_Interaction_displays_an_icon() {
 		// When
-		assertTrue(masumi().is_running());
+		assertTrue(masumi.is_running());
 		
 		// It should
-		assertTrue(((MainInteraction)main_interaction()).get_icon_image() != null);
+		assertTrue(((MainInteraction)mainInteraction).get_icon_image() != null);
 	}
 
 }

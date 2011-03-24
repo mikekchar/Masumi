@@ -32,8 +32,8 @@ public class Close extends Story {
 	 * @throws java.lang.Exception
 	 */
 	@Before
-	public void setUp() throws Exception {
-		this.run_masumi();
+	public void before() throws Exception {
+		setUp();
 	}
 
 	/**
@@ -41,8 +41,8 @@ public class Close extends Story {
 	 * @throws java.lang.Exception
 	 */
 	@After
-	public void tearDown() throws Exception {
-		reset();
+	public void after() throws Exception {
+		tearDown();
 	}
 
 	/**
@@ -51,14 +51,14 @@ public class Close extends Story {
 	@Test
 	public void closing_the_main_interaction_closes_exploreProblem() {
 		// When
-		assertTrue(this.masumi().is_running());
-		ExploreProblem exploreProblem = main_context().exploreProblem;
-		((MainInteraction)main_interaction()).request_closure();
+		assertTrue(masumi.is_running());
+		ExploreProblem exploreProblem = mainContext.exploreProblem;
+		((MainInteraction)mainInteraction).request_closure();
 		
 		// It should
-		assertFalse(main_interaction().is_open());
+		assertFalse(mainInteraction.is_open());
 		assertFalse(exploreProblem.getInteraction().is_open());
-		assertFalse(masumi().is_running());
+		assertFalse(masumi.is_running());
 	}
 
 }

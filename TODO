@@ -11,7 +11,7 @@ Masumi TODO List
   please contact me.  Once I've started work on one story, I won't
   change stories until it is done, though.
 
-** TODO Enter Japanese
+** TODO Enter Japanese [2/3]
    The user types Japanese and it is displayed on the screen.
    The text should wrap if it gets to the edge of the screen.
    On the Desktop:
@@ -23,6 +23,11 @@ Masumi TODO List
      space, the user can scroll the window as normal.  If the user deletes
      text such that it all fits on on screen then the user can't scroll
      the window any more.
+   - [X] Create a context to explore a problem.  For now just stick
+         an uneditable label in there.
+   - [X] Make the tests in android and swing look the same.  Right now
+         the code is quite different even though they do the same thing.
+   - [ ] Replace the label with an editable field with scrollbars.
 
 ** TODO Zoom display
     The user can zoom the display such that the characters on the screen

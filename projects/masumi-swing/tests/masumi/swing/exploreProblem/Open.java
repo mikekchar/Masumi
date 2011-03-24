@@ -29,8 +29,8 @@ public class Open extends Story {
 	 * @throws java.lang.Exception
 	 */
 	@Before
-	public void setUp() throws Exception {
-		this.run_masumi();
+	public void before() throws Exception {
+		setUp();
 	}
 
 	/**
@@ -38,8 +38,8 @@ public class Open extends Story {
 	 * @throws java.lang.Exception
 	 */
 	@After
-	public void tearDown() throws Exception {
-		reset();
+	public void after() throws Exception {
+		tearDown();
 	}
 
 	/**
@@ -48,12 +48,12 @@ public class Open extends Story {
 	@Test
 	public void opening_Masumi_adds_the_problem_widgets() {
 		// When
-		assertTrue(this.masumi().is_running());
-		MainInteraction main = (MainInteraction)main_interaction();
-		ExploreProblem exploreProblem = main_context().exploreProblem;
+		assertTrue(masumi.is_running());
+		MainInteraction main = (MainInteraction)mainInteraction;
+		ExploreProblem exploreProblem = mainContext.exploreProblem;
 		
 		// It should
-		assertTrue(main_context().is_entered());
+		assertTrue(mainContext.is_entered());
 		assertTrue(main.is_open());
 		assertTrue(exploreProblem.is_entered());
 		assertTrue(main.contains(exploreProblem.getInteraction()));

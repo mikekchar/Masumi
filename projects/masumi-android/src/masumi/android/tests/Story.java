@@ -24,6 +24,14 @@ public class Story extends ActivityInstrumentationTestCase2<MockMasumiActivity> 
 		mainInteraction = null;
 	}
 
+	
+	/**
+	 * Run Masumi.  Usually this will be run by the setUp methods in the concrete classes.
+	 */
+	public void runMasumi() {
+		mainContext = activity.runMasumi();
+	}
+	
 	/**
 	 * Masumi will be started on setUp and the Main Context will be entered.
 	 * @throws java.lang.Exception
@@ -32,8 +40,7 @@ public class Story extends ActivityInstrumentationTestCase2<MockMasumiActivity> 
 	public void setUp() throws Exception {
 		super.setUp();
 		activity = getActivity();
-		activity.runMasumi();
-		mainContext = activity.mainContext;
+		runMasumi();
 		mainInteraction = (MainInteraction)(mainContext.getInteraction());
 	}
 	

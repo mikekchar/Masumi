@@ -23,7 +23,8 @@ public class MockMasumiActivity extends MasumiActivity {
 		return false;
 	}
 	
-	public void runMasumi() {
+	public Main runMasumi() {
 		mainContext = (Main)(masumi.run());	
+		return mainContext;
 	}
 }
