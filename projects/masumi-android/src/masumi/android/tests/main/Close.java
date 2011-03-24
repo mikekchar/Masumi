@@ -20,7 +20,7 @@ public class Close extends Story {
 		
 		// It should
 		assertFalse(mainInteraction.is_open());
-		assertFalse(activity.masumi.is_running());
+		assertFalse(getMasumi().is_running());
 	}
 
 }

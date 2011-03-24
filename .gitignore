@@ -17,3 +17,4 @@ local.properties
 projects/masumi-android/libs/*.jar
 projects/masumi-android/masumi.keystore
 projects/masumi-android/masumi.password
+projects/masumi-android/gen

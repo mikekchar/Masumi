@@ -1,38 +1,42 @@
 package masumi.android;
 
-import masumi.android.R;
-import android.app.Activity;
+import masumi.android.widgets.MainWindow;
 import masumi.contexts.Context;
-import masumi.contexts.InteractionFactory;
 import masumi.contexts.Main;
 import masumi.contexts.Widget;
 import masumi.contexts.Main.Interaction;
 
 public class MainInteraction implements Interaction {
 
-	private Activity mainActivity;
 	private Main context;
-	private InteractionFactory factory;
+	private AndroidFactory factory;
+	private MainWindow widget;
 	private boolean isOpen;
 	
-	public MainInteraction(Main main, InteractionFactory aFactory) {
+	public MainInteraction(Main main, AndroidFactory aFactory) {
 		context = main;
 		factory = aFactory;
-		mainActivity = null;
 		isOpen = false;
+		widget = null;
 	}
 	
 	public boolean showUI() {
 		return factory.showUI();
 	}
 	
+	public android.content.Context getApplicationContext() {
+		return factory.getApplicationContext();
+	}
+	
 	@Override
 	public void open() {
 		isOpen = true;
-		mainActivity = ((MasumiForAndroid)context.getParent()).getMainActivity();
-		mainActivity.setContentView(R.layout.main);
+		widget = new MainWindow(this);
+		if (showUI()) {
+			factory.activity.setContentView(widget);
+		}
 	}
-
+		
 	@Override
 	public void close() {
 		isOpen = false;
@@ -54,19 +58,17 @@ public class MainInteraction implements Interaction {
 
 	@Override
 	public boolean contains(Context.Interaction anInteraction) {
-		// TODO Auto-generated method stub
-		return false;
+		return getWidget().contains(anInteraction.getWidget());
 	}
 
 	@Override
 	public Widget getWidget() {
-		// TODO Auto-generated method stub
-		return null;
+		return widget;
 	}
 
 	@Override
 	public void remove(Context.Interaction anInteraction) {
-		getWidget().add(anInteraction.getWidget());
+		getWidget().remove(anInteraction.getWidget());
 	}
 
 }

@@ -2,7 +2,6 @@ package masumi.android.tests;
 
 import android.test.ActivityInstrumentationTestCase2;
 import masumi.android.MainInteraction;
-import masumi.android.MasumiActivity;
 import masumi.android.MasumiForAndroid;
 import masumi.contexts.Main;
 
@@ -12,14 +11,14 @@ import masumi.contexts.Main;
  * @author Mike Charlton
  *
  */
-public class Story extends ActivityInstrumentationTestCase2<MasumiActivity> {
+public class Story extends ActivityInstrumentationTestCase2<MockMasumiActivity> {
 
 	protected Main mainContext;
 	protected MainInteraction mainInteraction;
-	protected MasumiActivity activity;
+	protected MockMasumiActivity activity;
 	
 	public Story() {
-		super("masumi.android", MasumiActivity.class);
+		super("masumi.android", MockMasumiActivity.class);
 		activity = null;
 		mainContext = null;
 		mainInteraction = null;
@@ -33,6 +32,7 @@ public class Story extends ActivityInstrumentationTestCase2<MasumiActivity> {
 	public void setUp() throws Exception {
 		super.setUp();
 		activity = getActivity();
+		activity.runMasumi();
 		mainContext = activity.mainContext;
 		mainInteraction = (MainInteraction)(mainContext.getInteraction());
 	}
