@@ -40,6 +40,7 @@ public abstract class Context {
 		public void open();
 		public void close();
 		public boolean is_open();
+		public void update();
 		public void add(Interaction anInteraction);
 		public void remove(Interaction anInteraction);
 		public Widget getWidget();

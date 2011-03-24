@@ -71,4 +71,9 @@ public class MainInteraction implements Interaction {
 		getWidget().remove(anInteraction.getWidget());
 	}
 
+	@Override
+	public void update() {
+		// Nothing to do here.
+	}
+
 }

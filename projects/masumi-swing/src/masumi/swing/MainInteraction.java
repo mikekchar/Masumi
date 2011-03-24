@@ -85,4 +85,9 @@ public class MainInteraction implements Main.Interaction {
 	public void remove(Context.Interaction anInteraction) {
 		getWidget().remove(anInteraction.getWidget());
 	}
+
+	@Override
+	public void update() {
+		widget.validate();
+	}
 }

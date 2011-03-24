@@ -16,6 +16,14 @@ public class ExploreProblemInteraction implements ExploreProblem.Interaction {
 		isOpen = false;
 		problem = new Problem();
 	}
+	
+	/**
+	 * Create the widgets necessary for exploring the problem.
+	 */
+	@Override
+	public void open() {
+		problem.setVisible(true);
+	}
 
 	/**
 	 * This removes the widgets from the screen.
@@ -33,13 +41,10 @@ public class ExploreProblemInteraction implements ExploreProblem.Interaction {
 	public boolean is_open() {
 		return isOpen;
 	}
-
-	/**
-	 * Create the widgets necessary for exploring the problem.
-	 */
+	
 	@Override
-	public void open() {
-		problem.setVisible(true);
+	public void update() {
+		problem.validate();
 	}
 
 	@Override
@@ -62,4 +67,13 @@ public class ExploreProblemInteraction implements ExploreProblem.Interaction {
 		// Don't do anything
 	}
 
+	@Override
+	public void selectAll() {
+		problem.selectAll();
+	}
+	
+	@Override
+	public void appendText(String aString) {
+		problem.appendText(aString);
+	}
 }

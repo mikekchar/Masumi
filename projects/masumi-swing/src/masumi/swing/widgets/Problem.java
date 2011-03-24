@@ -1,15 +1,45 @@
 package masumi.swing.widgets;
 
-import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import masumi.contexts.Widget;
 
-public class Problem extends JLabel implements Widget {
+public class Problem extends JScrollPane implements Widget {
 
 	private static final long serialVersionUID = -2256119425016378573L;
 
+	private JTextArea text;
+	
 	public Problem() {
-		super("Welcome to Masumi!");
+		super();
+		text = new JTextArea();
+		text.setEditable(true);
+		text.setLineWrap(true);
+		setViewportView(text);
+		setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
+		setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_AS_NEEDED);
+	}
+	
+	public String getText() {
+		return text.getText();
+	}
+	
+	public void appendText(String aString) {
+		text.append(aString);
+	}
+	
+	public boolean is_editable() {
+		return text.isEditable();
+	}
+	
+	public boolean has_lineWrap() {
+		return text.getLineWrap();
+	}
+	
+	public void selectAll() {
+		text.selectAll();
+		text.grabFocus();
 	}
 	
 	@Override

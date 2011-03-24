@@ -2,9 +2,13 @@ package masumi.swing.exploreProblem;
 
 
 import static org.junit.Assert.*;
+
+import javax.swing.ScrollPaneConstants;
+
 import masumi.contexts.ExploreProblem;
 import masumi.swing.MainInteraction;
 import masumi.swing.mocks.MockSwingFactory;
+import masumi.swing.widgets.Problem;
 
 import org.junit.After;
 import org.junit.Before;
@@ -51,12 +55,22 @@ public class Open extends Story {
 		assertTrue(masumi.is_running());
 		MainInteraction main = (MainInteraction)mainInteraction;
 		ExploreProblem exploreProblem = mainContext.exploreProblem;
+		Problem problem = ((Problem) exploreProblem.getInteraction().getWidget());
 		
 		// It should
 		assertTrue(mainContext.is_entered());
 		assertTrue(main.is_open());
 		assertTrue(exploreProblem.is_entered());
 		assertTrue(main.contains(exploreProblem.getInteraction()));
+		
+		assertTrue(problem.getText().equals("Type here to explore a problem."));
+		
+		assertTrue(problem.getHorizontalScrollBarPolicy() == 
+			ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		assertTrue(problem.getVerticalScrollBarPolicy() == 
+			ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		assertTrue(problem.is_editable());
+		assertTrue(problem.has_lineWrap());
 	}
 
 }
