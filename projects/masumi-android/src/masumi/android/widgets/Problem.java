@@ -2,14 +2,18 @@ package masumi.android.widgets;
 
 import masumi.android.ExploreProblemInteraction;
 import masumi.contexts.Widget;
-import android.widget.TextView;
+import android.widget.EditText;
+import 	android.view.ViewGroup.LayoutParams;
 
-public class Problem extends TextView implements Widget {
+
+public class Problem extends EditText implements Widget {
 
 	
 	public Problem(ExploreProblemInteraction anInteraction) {
 		super(anInteraction.getApplicationContext());
-		setText("Welcome to Masumi!");
+		LayoutParams params = new LayoutParams(LayoutParams.FILL_PARENT, 
+													LayoutParams.FILL_PARENT);
+		this.setLayoutParams(params);
 	}
 
 	@Override

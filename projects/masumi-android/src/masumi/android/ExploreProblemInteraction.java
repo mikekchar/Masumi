@@ -61,20 +61,17 @@ public class ExploreProblemInteraction implements Interaction {
 
 	@Override
 	public void appendText(String aString) {
-		// TODO Auto-generated method stub
-		
+		problem.append(aString);
 	}
 
 	@Override
 	public void selectAll() {
-		// TODO Auto-generated method stub
-		
+		problem.selectAll();
 	}
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		
+		// Nothing to do
 	}
 
 }
