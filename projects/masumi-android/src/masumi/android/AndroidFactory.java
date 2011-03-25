@@ -1,5 +1,6 @@
 package masumi.android;
 
+import android.view.View;
 import masumi.contexts.ExploreProblem;
 import masumi.contexts.InteractionFactory;
 import masumi.contexts.Main;
@@ -15,6 +16,10 @@ public class AndroidFactory implements InteractionFactory {
 	
 	android.content.Context getApplicationContext() {
 		return activity.getApplicationContext();
+	}
+	
+	View getLayout(int anID) {
+		return activity.findViewById(anID);
 	}
 	
 	@Override

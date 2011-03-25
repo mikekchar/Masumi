@@ -18,3 +18,13 @@ projects/masumi-android/libs/*.jar
 projects/masumi-android/masumi.keystore
 projects/masumi-android/masumi.password
 projects/masumi-android/gen
+osx/masumi.app
+projects/masumi-android/build
+projects/masumi-swing/build
+projects/masumi-core/build
+projects/masumi-core/*.jar
+projects/masumi-swing/*.jar
+projects/masumi-swing/results
+projects/masumi-swing/testBuild
+projects/test_framework/build
+
