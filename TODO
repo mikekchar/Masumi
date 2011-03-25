@@ -11,13 +11,6 @@ Masumi TODO List
   please contact me.  Once I've started work on one story, I won't
   change stories until it is done, though.
 
-** TODO Localize string resources
-   While Masumi is initially geared only at learning the Japanese
-   language from English, there is a possibility that it might be
-   used for other languages.  All hardcoded strings should be
-   localizeable into another language using the appropriate
-   technology for the platform.
-
 ** TODO Zoom display
     The user can zoom the display such that the characters on the screen
     look bigger.  This is important for people unused to kanji so that
@@ -213,4 +206,11 @@ Masumi TODO List
    - [X] Make the tests in android and swing look the same.  Right now
          the code is quite different even though they do the same thing.
    - [X] Replace the label with an editable field with scrollbars.
+
+** DONE Localize string resources
+   While Masumi is initially geared only at learning the Japanese
+   language from English, there is a possibility that it might be
+   used for other languages.  All hardcoded strings should be
+   localizeable into another language using the appropriate
+   technology for the platform.
 

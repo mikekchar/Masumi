@@ -21,6 +21,7 @@ public class Masumi extends Context {
 	public Masumi(InteractionFactory aFactory) {
 		super(aFactory);
 		isRunning = false;
+		aFactory.loadStrings();
 	}
 
     /**

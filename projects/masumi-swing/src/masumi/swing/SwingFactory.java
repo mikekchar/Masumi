@@ -10,7 +10,7 @@ import masumi.contexts.ExploreProblem.Interaction;
  * @author Mike Charlton
  *
  */
-public class SwingFactory implements masumi.contexts.InteractionFactory {
+public class SwingFactory extends masumi.contexts.InteractionFactory {
 	
 	@Override
 	public boolean showUI() {

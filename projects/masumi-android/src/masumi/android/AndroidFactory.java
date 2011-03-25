@@ -6,7 +6,7 @@ import masumi.contexts.InteractionFactory;
 import masumi.contexts.Main;
 import masumi.android.MainInteraction;
 
-public class AndroidFactory implements InteractionFactory {
+public class AndroidFactory extends InteractionFactory {
 
 	public MasumiActivity activity;
 	

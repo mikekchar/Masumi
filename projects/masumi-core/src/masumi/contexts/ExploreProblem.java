@@ -38,7 +38,7 @@ public class ExploreProblem extends Context {
 	@Override
 	public void enter(Context parent) {
 		super.enter(parent);
-		getInteraction().appendText("Type here to explore a problem.");
+		getInteraction().appendText(factory.getString("exploreProblem"));
 		getInteraction().selectAll();
 		getInteraction().update();
 	}

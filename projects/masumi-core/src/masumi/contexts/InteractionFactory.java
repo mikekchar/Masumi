@@ -1,5 +1,7 @@
 package masumi.contexts;
 
+import java.util.ResourceBundle;
+
 /**
  * Creates an Interaction given a Context.
  * This is an abstract class.
@@ -11,16 +13,26 @@ package masumi.contexts;
  * @author Mike Charlton
  *
  */
-public interface InteractionFactory {
+public abstract class InteractionFactory {
+		
+	protected ResourceBundle strings;
+
+	public void loadStrings() {
+		strings = ResourceBundle.getBundle("masumi.contexts.MasumiStrings");
+	}
 	
+	public String getString(String key) {
+		return strings.getString(key);
+	}
+	 
 	/**
 	 * There are times (when testing for instance) when we don't want to display the UI to the user.
 	 * This method should be called by open() on the interaction before displaying the UI.
 	 * @return true if the UI should be shown.
 	 */
-	public boolean showUI();
+	public abstract boolean showUI();
 	
-	public Main.Interaction create_interaction(Main context);
-	public ExploreProblem.Interaction create_interaction(ExploreProblem context);
+	public abstract Main.Interaction create_interaction(Main context);
+	public abstract ExploreProblem.Interaction create_interaction(ExploreProblem context);
 
 }

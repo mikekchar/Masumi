@@ -1,7 +1,5 @@
 package masumi.contexts;
 
-import masumi.contexts.InteractionFactory;
-
 /**
  * This is a user interaction context.
  * Basically, all user interaction is grouped into a Context.  The Context contains

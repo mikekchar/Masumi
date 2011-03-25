@@ -1,6 +1,5 @@
 package masumi.android;
 
-import android.view.View;
 import masumi.android.widgets.MainWindow;
 import masumi.contexts.Context;
 import masumi.contexts.Main;
