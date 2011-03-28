@@ -17,9 +17,9 @@ public class ExploreProblem extends Context {
 		public void selectAll();
 		
 		/**
-		 * Append the string to the current problem.
+		 * Set text of the current problem.
 		 */
-		public void appendText(String aString);
+		public void setText(String aString);
 	}
 	
 	public ExploreProblem(InteractionFactory aFactory) {
@@ -38,7 +38,7 @@ public class ExploreProblem extends Context {
 	@Override
 	public void enter(Context parent) {
 		super.enter(parent);
-		getInteraction().appendText(factory.getString("exploreProblem"));
+		getInteraction().setText(factory.getString("exploreProblem"));
 		getInteraction().selectAll();
 		getInteraction().update();
 	}

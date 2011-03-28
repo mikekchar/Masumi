@@ -73,7 +73,7 @@ public class ExploreProblemInteraction implements ExploreProblem.Interaction {
 	}
 	
 	@Override
-	public void appendText(String aString) {
-		problem.appendText(aString);
+	public void setText(String aString) {
+		problem.setText(aString);
 	}
 }

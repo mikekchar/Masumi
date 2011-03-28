@@ -28,7 +28,7 @@ public class Open extends Story {
 		assertTrue(exploreProblem.is_entered());
 		assertTrue(mainInteraction.contains(exploreProblem.getInteraction()));
 
-		String text = problem.getText().toString();
+		String text = problem.getText();
 		assertTrue(text.equals("Type here to explore a problem."));
 		
 		// I don't seem to be able to test that the widget is editable.  Sigh...

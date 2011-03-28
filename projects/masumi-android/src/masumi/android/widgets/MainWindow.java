@@ -9,8 +9,8 @@ public class MainWindow extends LinearLayout implements Widget{
 
 	
 	public MainWindow(MainInteraction anInteraction) {
-		super(anInteraction.getApplicationContext());
-		this.setId(1);
+		super(anInteraction.factory.getApplicationContext());
+		setId(anInteraction.factory.newId());
 	}
 
 	@Override

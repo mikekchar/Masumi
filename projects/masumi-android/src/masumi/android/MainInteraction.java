@@ -9,7 +9,7 @@ import masumi.contexts.Main.Interaction;
 public class MainInteraction implements Interaction {
 
 	private Main context;
-	private AndroidFactory factory;
+	public AndroidFactory factory;
 	private MainWindow widget;
 	private boolean isOpen;
 	
@@ -20,19 +20,11 @@ public class MainInteraction implements Interaction {
 		widget = null;
 	}
 	
-	public boolean showUI() {
-		return factory.showUI();
-	}
-	
-	public android.content.Context getApplicationContext() {
-		return factory.getApplicationContext();
-	}
-	
 	@Override
 	public void open() {
 		isOpen = true;
 		widget = new MainWindow(this);
-		if (showUI()) {
+		if (factory.showUI()) {
 			factory.activity.setContentView(widget);
 		}
 	}

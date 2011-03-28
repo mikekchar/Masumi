@@ -1,6 +1,5 @@
 package masumi.android;
 
-import android.view.View;
 import masumi.contexts.ExploreProblem;
 import masumi.contexts.InteractionFactory;
 import masumi.contexts.Main;
@@ -9,17 +8,27 @@ import masumi.android.MainInteraction;
 public class AndroidFactory extends InteractionFactory {
 
 	public MasumiActivity activity;
+	private int numWidgets;
 	
 	public AndroidFactory(MasumiActivity anActivity) {
 		activity = anActivity;
+		numWidgets = 0;
 	}
 	
-	android.content.Context getApplicationContext() {
+	public android.content.Context getApplicationContext() {
 		return activity.getApplicationContext();
 	}
 	
-	View getLayout(int anID) {
-		return activity.findViewById(anID);
+	/**
+	 * Creates a new id for an Android view.
+	 * Each view in Android requires a unique ID.  Therefore, when the view is created,
+	 * do a setId(factory.newId());
+	 * 
+	 * @return Android ID
+	 */
+	public int newId() {
+		numWidgets = numWidgets + 1;
+		return numWidgets;
 	}
 	
 	@Override

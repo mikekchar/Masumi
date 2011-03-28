@@ -105,8 +105,8 @@ public class Problem extends JScrollPane implements Widget {
 		return text.getText();
 	}
 	
-	public void appendText(String aString) {
-		text.append(aString);
+	public void setText(String aString) {
+		text.setText(aString);
 	}
 	
 	public boolean is_editable() {

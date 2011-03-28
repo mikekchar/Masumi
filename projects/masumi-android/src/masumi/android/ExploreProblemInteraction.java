@@ -10,7 +10,7 @@ public class ExploreProblemInteraction implements Interaction {
 	public ExploreProblem context;
 	private boolean isOpen;
 	private Problem problem;
-	private AndroidFactory factory;
+	public AndroidFactory factory;
 	
 	public ExploreProblemInteraction(ExploreProblem aContext, AndroidFactory aFactory) {
 		context = aContext;
@@ -19,10 +19,6 @@ public class ExploreProblemInteraction implements Interaction {
 		problem = null;
 	}
 	
-	public android.content.Context getApplicationContext() {
-		return factory.getApplicationContext();
-	}
-
 	@Override
 	public void add(masumi.contexts.Context.Interaction anInteraction) {
 		// Nothing to do here
@@ -60,8 +56,8 @@ public class ExploreProblemInteraction implements Interaction {
 	}
 
 	@Override
-	public void appendText(String aString) {
-		problem.append(aString);
+	public void setText(String aString) {
+		problem.setText(aString);
 	}
 
 	@Override
