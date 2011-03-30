@@ -1,9 +1,5 @@
 package masumi.contexts;
 
-import masumi.contexts.Context;
-import masumi.contexts.InteractionFactory;
-import masumi.contexts.Main;
-
 /**
  * Masumi is the main application.
  * Although Masumi is a Context it really only exists to choose the correct Main Context and InteractionFactory.
@@ -18,7 +14,7 @@ public class Masumi extends Context {
 	
 	protected boolean isRunning;
 	
-	public Masumi(InteractionFactory aFactory) {
+	protected Masumi(InteractionFactory aFactory) {
 		super(aFactory);
 		isRunning = false;
 		aFactory.loadStrings();
@@ -26,6 +22,7 @@ public class Masumi extends Context {
 
     /**
      * Returns the version information for this application.
+     * @return the version
      */
     public String version() {
         return Masumi.class.getPackage().getImplementationVersion();
@@ -34,9 +31,8 @@ public class Masumi extends Context {
 	/*
 	 * Creates a new MainContext.  This can be overridden to setup the context before entering it.
 	 */
-	public Context create_main_context(InteractionFactory factory) {
-		Context context = new Main(factory);
-		return context;
+    Context create_main_context(InteractionFactory factory) {
+	    return new Main(factory);
 	}
 	
 	/*
@@ -64,7 +60,7 @@ public class Masumi extends Context {
 	 * Quits everything.  This method can be over ridden in the tests to ensure that
 	 * the application actually quits, without actually quitting the application.
 	 */
-	public void exit_system() {
+    protected void exit_system() {
 		System.exit(0);
 	}
 

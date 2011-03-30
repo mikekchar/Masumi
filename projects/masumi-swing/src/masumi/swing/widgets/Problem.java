@@ -18,14 +18,13 @@ public class Problem extends JScrollPane implements Widget {
 
 	private class ZoomAction extends AbstractAction {
 		private static final long serialVersionUID = -1536912129826641287L;
-		Problem problem;
+		final Problem problem;
 		
 		public ZoomAction(Problem aProblem) {
 			super();
 			problem = aProblem;
 		}
 
-		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			problem.zoom();
 		}
@@ -34,20 +33,19 @@ public class Problem extends JScrollPane implements Widget {
 	private class UnZoomAction extends AbstractAction {
 
 		private static final long serialVersionUID = -1765540335925609751L;
-		Problem problem;
+		final Problem problem;
 		
 		public UnZoomAction(Problem aProblem) {
 			super();
 			problem = aProblem;
 		}
 
-		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			problem.unzoom();
+			problem.unZoom();
 		}
 	}
 
-	private JTextArea text;
+	private final JTextArea text;
 	
 	public Problem() {
 		super();
@@ -63,12 +61,12 @@ public class Problem extends JScrollPane implements Widget {
 		setUpInputMap();
 	}
 	
-	public void setUpInputMap() {
+	void setUpInputMap() {
 		ZoomAction zoom;
-		UnZoomAction unzoom;
+		UnZoomAction unZoom;
 
 		zoom = new ZoomAction(this);
-		unzoom = new UnZoomAction(this);
+		unZoom = new UnZoomAction(this);
 		text.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, 
 								InputEvent.CTRL_MASK | InputEvent.SHIFT_MASK, true), 
 								"UnZoom");
@@ -76,10 +74,10 @@ public class Problem extends JScrollPane implements Widget {
 								InputEvent.CTRL_MASK, true), 
 								"Zoom");
 		text.getActionMap().put("Zoom", zoom);
-		text.getActionMap().put("UnZoom", unzoom);		
+		text.getActionMap().put("UnZoom", unZoom);
 	}
 	
-	public void zoom() {
+	void zoom() {
 		Font font = text.getFont();
 		int size = font.getSize();
 		size = size + 2;
@@ -89,7 +87,7 @@ public class Problem extends JScrollPane implements Widget {
 		text.setFont(font);
 	}
 	
-	public void unzoom() {
+	void unZoom() {
 		Font font = text.getFont();
 		int size = font.getSize();
 		if (size > 6) {
@@ -122,19 +120,15 @@ public class Problem extends JScrollPane implements Widget {
 		text.grabFocus();
 	}
 	
-	@Override
 	public void add(Widget aWidget) {
 		// Don't do anything for now
 	}
 
-	@Override
 	public boolean contains(Widget widget) {
 		return false;
 	}
 
-	@Override
 	public void remove(Widget aWidget) {
 		// Don't do anything for now
 	}
-
 }

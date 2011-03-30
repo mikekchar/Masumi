@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
  */
 public abstract class InteractionFactory {
 		
-	protected ResourceBundle strings;
+	private ResourceBundle strings;
 
 	public void loadStrings() {
 		strings = ResourceBundle.getBundle("masumi.contexts.MasumiStrings");

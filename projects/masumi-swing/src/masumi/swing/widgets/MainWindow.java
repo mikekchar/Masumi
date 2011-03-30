@@ -20,7 +20,7 @@ public class MainWindow extends JFrame implements Widget{
 	 *
 	 */
 	private class FrameMediator extends WindowAdapter {
-		private MainInteraction interaction;
+		private final MainInteraction interaction;
 		
 		FrameMediator(MainInteraction theInteraction) {
 			interaction = theInteraction;
@@ -38,43 +38,40 @@ public class MainWindow extends JFrame implements Widget{
 
 	private static final long serialVersionUID = 781198792258981628L;
 
-	private MainInteraction interaction;
-	public ImageIcon icon;
+	private final ImageIcon icon;
 
 	public MainWindow(MainInteraction anInteraction) {
 		super();
 		
-		interaction = anInteraction;
 		setSize(300,400);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		addWindowListener(new FrameMediator(interaction));
+		addWindowListener(new FrameMediator(anInteraction));
 		setTitle("Masumi");
-		URL url = interaction.getClass().getResource("resources/masumi-icon.png");
+		URL url = anInteraction.getClass().getResource("resources/masumi-icon.png");
 		icon = new ImageIcon(url);
 		setIconImage(icon.getImage());
-		setVisible(interaction.showUI());
+		setVisible(anInteraction.showUI());
 	}
 
-	@Override
-	public void add(Widget aWidget) {
+		public void add(Widget aWidget) {
 		this.getContentPane().add((Component) aWidget);
 	}
 
-	@Override
 	public void remove(Widget aWidget) {
 		this.getContentPane().remove((Component)aWidget);
 	}
 
-	@Override
 	public boolean contains(Widget widget) {
-		boolean retVal = false;
+		boolean retVal;
+
+        retVal= false;
 		Component[] components = this.getContentPane().getComponents();
-		for(int i = 0; i < components.length; i++) {
-			if (components[i] == (Component)widget) {
-				retVal = true;
-				break;
-			}
-		}
+        for (Component component : components) {
+            if (component == widget) {
+                retVal = true;
+                break;
+            }
+        }
 		return retVal;
 	}
 	

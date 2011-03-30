@@ -38,8 +38,8 @@ public class Problem extends RelativeLayout implements Widget {
 		}
 	}
 	
-	private Editor editor;
-	private Viewer viewer;
+	private final Editor editor;
+	private final Viewer viewer;
 	
 	public Problem(ExploreProblemInteraction anInteraction) {
 		super(anInteraction.factory.getApplicationContext());

@@ -11,11 +11,11 @@ import masumi.contexts.Main;
  */
 public class Story {
 
-	public MockMasumi masumi;
-	public Main mainContext;
-	public Main.Interaction mainInteraction;
+	protected final MockMasumi masumi;
+	protected Main mainContext;
+	protected Main.Interaction mainInteraction;
 	
-	public Story(InteractionFactory aFactory) {
+	protected Story(InteractionFactory aFactory) {
 		masumi = new MockMasumi(aFactory);
 		mainContext = null;
 		mainInteraction = null;
@@ -24,7 +24,7 @@ public class Story {
 	/**
 	 * Run Masumi.  Usually this will be run by the setUp methods in the concrete classes.
 	 */
-	public void runMasumi() {
+    void runMasumi() {
 		mainContext = (Main)masumi.run();
 		mainInteraction = (Main.Interaction)(mainContext.getInteraction());
 	}

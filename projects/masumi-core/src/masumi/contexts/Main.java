@@ -1,7 +1,5 @@
 package masumi.contexts;
 
-import masumi.contexts.InteractionFactory;
-
 /**
  * This is the Main Context.  
  * It corresponds to the main window frame in the application.  It provides
@@ -26,7 +24,7 @@ public class Main extends Context {
 	}
 
 	/* The Main Context is composed of the following sub-contexts */
-	public ExploreProblem exploreProblem;
+	public final ExploreProblem exploreProblem;
 	
 	public Main(InteractionFactory aFactory) {
 		super(aFactory);

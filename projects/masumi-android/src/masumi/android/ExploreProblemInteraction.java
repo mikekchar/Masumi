@@ -7,10 +7,10 @@ import masumi.contexts.ExploreProblem.Interaction;
 
 public class ExploreProblemInteraction implements Interaction {
 
-	public ExploreProblem context;
+	private final ExploreProblem context;
 	private boolean isOpen;
 	private Problem problem;
-	public AndroidFactory factory;
+	public final AndroidFactory factory;
 	
 	public ExploreProblemInteraction(ExploreProblem aContext, AndroidFactory aFactory) {
 		context = aContext;

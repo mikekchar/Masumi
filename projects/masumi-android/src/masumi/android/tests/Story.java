@@ -15,7 +15,7 @@ public class Story extends ActivityInstrumentationTestCase2<MockMasumiActivity> 
 
 	protected Main mainContext;
 	protected MainInteraction mainInteraction;
-	protected MockMasumiActivity activity;
+	private MockMasumiActivity activity;
 	
 	public Story() {
 		super("masumi.android", MockMasumiActivity.class);
@@ -28,7 +28,7 @@ public class Story extends ActivityInstrumentationTestCase2<MockMasumiActivity> 
 	/**
 	 * Run Masumi.  Usually this will be run by the setUp methods in the concrete classes.
 	 */
-	public void runMasumi() {
+    void runMasumi() {
 		mainContext = activity.runMasumi();
 	}
 	
@@ -58,7 +58,7 @@ public class Story extends ActivityInstrumentationTestCase2<MockMasumiActivity> 
 		activity = null;
 	}
 
-	public MasumiForAndroid getMasumi() {
+	protected MasumiForAndroid getMasumi() {
 		return activity.masumi;
 	}
 }

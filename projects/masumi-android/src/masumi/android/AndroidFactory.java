@@ -7,7 +7,7 @@ import masumi.android.MainInteraction;
 
 public class AndroidFactory extends InteractionFactory {
 
-	public MasumiActivity activity;
+	public final MasumiActivity activity;
 	private int numWidgets;
 	
 	public AndroidFactory(MasumiActivity anActivity) {

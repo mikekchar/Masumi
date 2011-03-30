@@ -12,14 +12,13 @@ import masumi.swing.widgets.MainWindow;
  */
 public class MainInteraction implements Main.Interaction {
 
-	public Main context;
-	private InteractionFactory factory;
+	private final Main context;
 	private boolean isOpen;
-	private MainWindow widget;
-	
+	private final MainWindow widget;
+	private final SwingFactory factory;
 
 	public MainInteraction(Main aContext, InteractionFactory aFactory) {
-		factory = aFactory;
+		factory = (SwingFactory) aFactory;
 		context = aContext;
 		isOpen = false;
 		widget = new MainWindow(this);
@@ -66,27 +65,22 @@ public class MainInteraction implements Main.Interaction {
 		context.exit();
 	}
 
-	@Override
 	public void add(Context.Interaction anInteraction) {
 		getWidget().add(anInteraction.getWidget());
 	}
 
-	@Override
 	public boolean contains(Context.Interaction anInteraction) {
 		return getWidget().contains(anInteraction.getWidget());
 	}
 
-	@Override
 	public Widget getWidget() {
 		return widget;
 	}
 
-	@Override
 	public void remove(Context.Interaction anInteraction) {
 		getWidget().remove(anInteraction.getWidget());
 	}
 
-	@Override
 	public void update() {
 		widget.validate();
 	}

@@ -6,5 +6,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/masumi-core"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/test_framework"/>
 	<classpathentry kind="lib" path="/usr/share/java/junit4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hamcrest"/>
 	<classpathentry kind="output" path="eclipse-build"/>
 </classpath>

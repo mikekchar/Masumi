@@ -45,12 +45,12 @@ public abstract class Context {
 		public boolean contains(Interaction anInteraction);
 	}
 	
-	protected boolean entered;
-	protected InteractionFactory factory;
-	protected Interaction interaction;
-	protected Context parent;
+	private boolean entered;
+	final InteractionFactory factory;
+	final Interaction interaction;
+	Context parent;
 
-	public Context(InteractionFactory aFactory) {
+	Context(InteractionFactory aFactory) {
 		factory = aFactory;
 		entered = false;
 		parent = null;
@@ -66,7 +66,7 @@ public abstract class Context {
 	 * @return the concrete Interaction
 	 * TODO Try to make this done using generics.
 	 */
-	public abstract Interaction create_interaction();
+	protected abstract Interaction create_interaction();
 
 	/**
 	 * Enter a new UI Context.
@@ -78,7 +78,7 @@ public abstract class Context {
 	 * 
 	 * @param aParent The context that was active when this Context is entered.
 	 */
-	public void enter(Context aParent) {
+    void enter(Context aParent) {
 		entered = true;
 		parent = aParent;
 		if (interaction != null) {
@@ -100,7 +100,7 @@ public abstract class Context {
 	 * Exit the Context.
 	 * This will close the interaction if it isn't already closed.
 	 */
-	public void exit() {
+    void exit() {
 		if (is_entered()) {
 			if(interaction != null) {
 				if (parent.interaction != null) {
@@ -112,25 +112,12 @@ public abstract class Context {
 		}
 	}
 	
-	/**
-	 * @return the interaction factory for this context
-	 */
-	public InteractionFactory getFactory() {
-		return factory;
-	}
-	
+
 	/**
 	 * @return the interaction for this context.
 	 */
 	public Interaction getInteraction() {
 		return interaction;
-	}
-	
-	/**
-	 * @return the parent Context of this Context
-	 */
-	public Context getParent() {
-		return parent;
 	}
 
 }

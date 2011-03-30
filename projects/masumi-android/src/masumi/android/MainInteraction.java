@@ -8,8 +8,8 @@ import masumi.contexts.Main.Interaction;
 
 public class MainInteraction implements Interaction {
 
-	private Main context;
-	public AndroidFactory factory;
+	private final Main context;
+	public final AndroidFactory factory;
 	private MainWindow widget;
 	private boolean isOpen;
 	

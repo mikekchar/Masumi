@@ -7,8 +7,8 @@ import android.os.Bundle;
 public class MasumiActivity extends Activity {
 	/** Called when the activity is first created. */
 	
-	public MasumiForAndroid masumi;
-	public Main mainContext;
+	public final MasumiForAndroid masumi;
+	protected Main mainContext;
 	
 	public MasumiActivity() {
 		super();
@@ -23,7 +23,7 @@ public class MasumiActivity extends Activity {
 	 * it in the tests.  If we don't, the UI ends up being created in the setup thread
 	 * and tested in the testing thread (which crashes).
 	 */
-	public void run() {
+    protected void run() {
 		mainContext = (Main)(masumi.run());		
 	}
 	
