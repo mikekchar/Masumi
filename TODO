@@ -11,7 +11,7 @@ Masumi TODO List
   please contact me.  Once I've started work on one story, I won't
   change stories until it is done, though.
 
-** TODO Zoom display [9/12]
+** TODO Zoom display [10/13]
     The user can zoom the display such that the characters on the screen
     look bigger.  This is important for people unused to kanji so that
     they can increase the font size to be able to see the characters
@@ -47,7 +47,9 @@ Masumi TODO List
       - [X] Close the IME when the edit window is closed.  Close the edit window when
             the user presses the back button on the device, the done button in the
             edit window in landscape mode, or the enter key on the keyboard.
-	  - [ ] Open the IME immediately when opening the edit window.
+	  - [X] Open the IME immediately when opening the edit window.
+	  - [ ] Get rid of the button and edit the field simply by clicking on it.
+	        Not sure if this is possible.
       - [ ] Ensure that both the edit field and the display field retain
 			their information when the orientation is changed.
 	  - [ ] Write documentation.

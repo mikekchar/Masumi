@@ -79,6 +79,12 @@ public class Problem extends RelativeLayout implements Widget {
             imm.hideSoftInputFromWindow(getWindowToken(), 0);
         }
 
+        void showIME() {
+            requestFocus();
+            InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT);
+        }
+
 	}
 	
 	static class Viewer extends WebView {
@@ -198,6 +204,7 @@ public class Problem extends RelativeLayout implements Widget {
     void openEditor() {
         removeView(button);
         layoutWith(editor);
+        editor.showIME();
     }
 
     void closeEditor() {
