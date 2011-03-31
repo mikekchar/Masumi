@@ -11,7 +11,7 @@ Masumi TODO List
   please contact me.  Once I've started work on one story, I won't
   change stories until it is done, though.
 
-** TODO Zoom display [3/10]
+** TODO Zoom display [4/10]
     The user can zoom the display such that the characters on the screen
     look bigger.  This is important for people unused to kanji so that
     they can increase the font size to be able to see the characters
@@ -38,7 +38,7 @@ Masumi TODO List
 			can zoom using the stard zoom gesture.
       - [X] Edit field Edits text.  Pressing "Enter" or "Done" sends the data
 			to the display field.
-      - [ ] Make sure the Display field can display Japanese text.
+      - [X] Make sure the Display field can display Japanese text.
       - [ ] Closing the IME sends data to the Display field.
       - [ ] Add an edit button.  Don't display edit field until the edit button
 			is pressed.

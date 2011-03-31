@@ -34,7 +34,7 @@ public class Problem extends RelativeLayout implements Widget {
 		}
 		
 		public void setText(String aString) {
-			viewer.loadDataWithBaseURL("fake.url.com", aString, "", "", "");
+			viewer.loadDataWithBaseURL("fake.url.com", aString, "", "UTF-8", "");
 		}
 	}
 	
@@ -57,7 +57,6 @@ public class Problem extends RelativeLayout implements Widget {
 		addView(editor, editorParams);
 
 		editor.setOnKeyListener(new OnKeyListener() {
-			@Override
 			public boolean onKey(View view, int keyCode, KeyEvent event) {
 				if ((event.getAction() == KeyEvent.ACTION_DOWN) && 
 						(keyCode == KeyEvent.KEYCODE_ENTER)) {
@@ -69,7 +68,6 @@ public class Problem extends RelativeLayout implements Widget {
 		});
 
 		editor.setOnEditorActionListener(new OnEditorActionListener() {
-			@Override
 			public boolean onEditorAction(TextView view, int actionId, KeyEvent event) {
 //				if (actionId == EditorInfo.IME_ACTION_DONE) {
 					viewer.setText(editor.getText().toString());
@@ -92,17 +90,14 @@ public class Problem extends RelativeLayout implements Widget {
 		editor.selectAll();
 	}
 
-	@Override
 	public void add(Widget aWidget) {
 		// Nothing to do
 	}
 
-	@Override
 	public void remove(Widget aWidget) {
 		// Nothing to do
 	}
 
-	@Override
 	public boolean contains(Widget aWidget) {
 		return false;
 	}

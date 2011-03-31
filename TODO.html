@@ -6,7 +6,7 @@ lang="en" xml:lang="en">
 <title>Masumi TODO List</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2011-03-25 15:34:04 JST"/>
+<meta name="generated" content="2011-03-31 10:58:50 JST"/>
 <meta name="author" content="Mike Charlton"/>
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
@@ -74,7 +74,7 @@ lang="en" xml:lang="en">
 <ul>
 <li><a href="#sec-1">1 Stories </a>
 <ul>
-<li><a href="#sec-1.1">1.1 Zoom display </a></li>
+<li><a href="#sec-1.1">1.1 Zoom display [4/10] </a></li>
 <li><a href="#sec-1.2">1.2 Open a window to inspect characters </a></li>
 <li><a href="#sec-1.3">1.3 Display Readings and Radical information in the information window </a></li>
 <li><a href="#sec-1.4">1.4 Dictionary Lookup Mode </a></li>
@@ -87,8 +87,9 @@ lang="en" xml:lang="en">
 <li><a href="#sec-1.11">1.11 Display Stroke Order </a></li>
 <li><a href="#sec-1.12">1.12 Allow installation on older Mac OSX versions [0/2] </a></li>
 <li><a href="#sec-1.13">1.13 JLDrill drill functionality. </a></li>
-<li><a href="#sec-1.14">1.14 Create packaging for WebStart [0/2] </a></li>
-<li><a href="#sec-1.15">1.15 Allow the user to view Chinese information for characters </a></li>
+<li><a href="#sec-1.14">1.14 Implement zoom gesture for editable fields on Android. </a></li>
+<li><a href="#sec-1.15">1.15 Create packaging for WebStart [0/2] </a></li>
+<li><a href="#sec-1.16">1.16 Allow the user to view Chinese information for characters </a></li>
 </ul>
 </li>
 <li><a href="#sec-2">2 Completed Stories for Version 0.1.0 </a>
@@ -120,7 +121,7 @@ change stories until it is done, though.
 </div>
 
 <div id="outline-container-1.1" class="outline-3">
-<h3 id="sec-1.1">1.1 <span class="todo">TODO</span> Zoom display </h3>
+<h3 id="sec-1.1">1.1 <span class="todo">TODO</span> Zoom display [4/10] </h3>
 <div id="text-1.1">
 
 <p>The user can zoom the display such that the characters on the screen
@@ -128,13 +129,61 @@ look bigger.  This is important for people unused to kanji so that
 they can increase the font size to be able to see the characters
 clearly, and then decrease the zoom to be able to read comfortably.
 The sentence should re-wrap so that horizontal scrolling is not 
-necessary.  The character in the upper left hand corner should be the
-same character while zooming in and zooming out.
+necessary. As much as possible, the upper left hand character should
+not change, but the insertion point should always remain on the
+screen.
 On the Desktop:
-I don't know what the UI should look like!!!  FIX ME!!!
+The user presses Ctl-Z to zoom in and Shift-Ctl-Z to zoom out.
 On Android:
-Use the zoom gesture to zoom in and out.
-</p>
+Unfortunately, we can't easily zoom an editable field on Android.
+The problem is that the zoom gesture is only available to the
+web display.  To compound the problem, the zoom gesture is
+a multi-touch gesture which is not available on all devices.
+So there will be a WebView displaying the field.  The zoom gesture
+will zoom the field.  There will be an edit button.  When the
+user presses the edit button, they are presented with an edit window.
+The edit window has a close button.  If the user presses "Enter"
+or "Done", then the data is moved to the display window.  Similarly,
+if the Close button is pressed, the data is moved to the display window.
+</p><ul>
+<li>
+<b>[X]</b> Zoom in and zoom out on Desktop.
+</li>
+<li>
+<b>[X]</b> Create Display field and Edit field on Android.  Display field
+can zoom using the stard zoom gesture.
+</li>
+<li>
+<b>[X]</b> Edit field Edits text.  Pressing "Enter" or "Done" sends the data
+to the display field.
+</li>
+<li>
+<b>[X]</b> Make sure the Display field can display Japanese text.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Closing the IME sends data to the Display field.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Add an edit button.  Don't display edit field until the edit button
+is pressed.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Add a close button to the edit field.  Pressing it sends data
+to the display field and closes the edit field.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Give the edit field a different background colour to distinguish
+it.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Ensure that both the edit field and the display field retain
+their information when the orientation is changed.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Write documentation.
+
+</li>
+</ul>
 </div>
 
 </div>
@@ -319,8 +368,25 @@ just so everybody knows what I'm planning.
 </div>
 
 <div id="outline-container-1.14" class="outline-3">
-<h3 id="sec-1.14">1.14 <span class="todo">TODO</span> Create packaging for WebStart [0/2] </h3>
+<h3 id="sec-1.14">1.14 <span class="todo">TODO</span> Implement zoom gesture for editable fields on Android. </h3>
 <div id="text-1.14">
+
+<p>We can't zoom an editable field on Android because the zoom gesture
+isn't implemented.  Implement 2 zoom gestures.  The first is
+a multi-touch gesture similar to the one that already exists
+for the WebView.  However, many devices do not have multi-touch,
+therefore, also implement a single-touch gesture.  The user will
+be able to select which gesture to use but it will default to
+multi-touch for devices that support it and single-touch for those
+that do not.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.15" class="outline-3">
+<h3 id="sec-1.15">1.15 <span class="todo">TODO</span> Create packaging for WebStart [0/2] </h3>
+<div id="text-1.15">
 
 <p>Webstart is a way to distribute applications for any Java platform
 using the web.  The person simply clicks a link on a web page and
@@ -338,9 +404,9 @@ the application is installed.
 
 </div>
 
-<div id="outline-container-1.15" class="outline-3">
-<h3 id="sec-1.15">1.15 <span class="todo">TODO</span> Allow the user to view Chinese information for characters </h3>
-<div id="text-1.15">
+<div id="outline-container-1.16" class="outline-3">
+<h3 id="sec-1.16">1.16 <span class="todo">TODO</span> Allow the user to view Chinese information for characters </h3>
+<div id="text-1.16">
 
 <p>The data in the kanji characters also contain pinyin.  Create an
 option to allow the user to view that information instead of
@@ -574,7 +640,7 @@ technology for the platform.
 <div id="postamble"><p class="author"> Author: Mike Charlton
 <a href="mailto:mike@Wrook">&lt;mike@Wrook&gt;</a>
 </p>
-<p class="date"> Date: 2011-03-25 15:34:04 JST</p>
+<p class="date"> Date: 2011-03-31 10:58:50 JST</p>
 <p>HTML generated by org-mode 6.21b in emacs 23</p>
 </div></body>
 </html>
