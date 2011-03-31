@@ -7,11 +7,11 @@ Masumi TODO List
 
 * Stories
   Here is the pending functionality for Masumi.  This is the order I
-  intend to takle the work.  If you would like anything done sooner,
+  intend to tackle the work.  If you would like anything done sooner,
   please contact me.  Once I've started work on one story, I won't
   change stories until it is done, though.
 
-** TODO Zoom display [4/10]
+** TODO Zoom display [5/10]
     The user can zoom the display such that the characters on the screen
     look bigger.  This is important for people unused to kanji so that
     they can increase the font size to be able to see the characters
@@ -35,11 +35,13 @@ Masumi TODO List
 	  if the Close button is pressed, the data is moved to the display window.
 	  - [X] Zoom in and zoom out on Desktop.
 	  - [X] Create Display field and Edit field on Android.  Display field
-			can zoom using the stard zoom gesture.
+			can zoom using the standard zoom gesture.
       - [X] Edit field Edits text.  Pressing "Enter" or "Done" sends the data
 			to the display field.
       - [X] Make sure the Display field can display Japanese text.
-      - [ ] Closing the IME sends data to the Display field.
+      - [X] Closing the IME sends data to the Display field.
+      - [X] Send the data to the display field after every edit.
+      - [X] Make sure the scale of the display field stays constant while editing.
       - [ ] Add an edit button.  Don't display edit field until the edit button
 			is pressed.
       - [ ] Add a close button to the edit field.  Pressing it sends data
