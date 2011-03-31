@@ -11,7 +11,7 @@ Masumi TODO List
   please contact me.  Once I've started work on one story, I won't
   change stories until it is done, though.
 
-** TODO Zoom display [5/10]
+** TODO Zoom display [9/12]
     The user can zoom the display such that the characters on the screen
     look bigger.  This is important for people unused to kanji so that
     they can increase the font size to be able to see the characters
@@ -42,12 +42,12 @@ Masumi TODO List
       - [X] Closing the IME sends data to the Display field.
       - [X] Send the data to the display field after every edit.
       - [X] Make sure the scale of the display field stays constant while editing.
-      - [ ] Add an edit button.  Don't display edit field until the edit button
+      - [X] Add an edit button.  Don't display edit field until the edit button
 			is pressed.
-      - [ ] Add a close button to the edit field.  Pressing it sends data
-			to the display field and closes the edit field.
-	  - [ ] Give the edit field a different background colour to distinguish
-			it.
+      - [X] Close the IME when the edit window is closed.  Close the edit window when
+            the user presses the back button on the device, the done button in the
+            edit window in landscape mode, or the enter key on the keyboard.
+	  - [ ] Open the IME immediately when opening the edit window.
       - [ ] Ensure that both the edit field and the display field retain
 			their information when the orientation is changed.
 	  - [ ] Write documentation.
@@ -75,9 +75,9 @@ Masumi TODO List
    Introduce a new mode for the information window.  If the user does
    something (to be determined), the information switches between showing
    the character and readings, to doing a lookup  in a dictionary for
-   the word under the mouse, finger.  This works excactly the same as
+   the word under the mouse, finger.  This works exactly the same as
    it does in JLDrill (need to type the details into this story).
-   Note that this does NOT include deinflection of verbs/adjectives!
+   Note that this does NOT include de-inflection of verbs/adjectives!
    If the word is found, the reading, canonical writing form and
    English definitions are given in the information window.  If no word
    is found, the character will be displayed as if in character lookup

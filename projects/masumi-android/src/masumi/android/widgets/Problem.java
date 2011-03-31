@@ -1,8 +1,12 @@
 package masumi.android.widgets;
 
+import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import masumi.android.ExploreProblemInteraction;
+import masumi.contexts.ExploreProblem;
 import masumi.contexts.Widget;
 import android.view.KeyEvent;
 import android.view.View;
@@ -17,7 +21,7 @@ import android.text.InputType;
 
 public class Problem extends RelativeLayout implements Widget {
 
-	static class Editor extends EditText {
+    static class Editor extends EditText {
 
         static class OnKeyPreImeListener {
 
@@ -44,11 +48,13 @@ public class Problem extends RelativeLayout implements Widget {
             }
         }
 
+        Context context;
         OnKeyPreImeListener keyPreImeListener;
 
 		public Editor(ExploreProblemInteraction anInteraction) {
 			super(anInteraction.factory.getApplicationContext());
 			setId(anInteraction.factory.newId());
+            context = anInteraction.factory.getApplicationContext();
 			setMinLines(5);
 			setInputType(InputType.TYPE_CLASS_TEXT | 
 					InputType.TYPE_TEXT_FLAG_MULTI_LINE);
@@ -68,6 +74,11 @@ public class Problem extends RelativeLayout implements Widget {
             return super.dispatchKeyEvent(event);
         }
 
+        void hideIME() {
+            InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getWindowToken(), 0);
+        }
+
 	}
 	
 	static class Viewer extends WebView {
@@ -82,30 +93,34 @@ public class Problem extends RelativeLayout implements Widget {
 			loadDataWithBaseURL("fake.url.com", aString, "", "UTF-8", "");
 		}
 	}
+
+    static class EditButton extends Button {
+        public EditButton(ExploreProblemInteraction anInteraction) {
+            super(anInteraction.factory.getApplicationContext());
+            setId(anInteraction.factory.newId());
+        }
+    }
 	
 	private final Editor editor;
 	private final Viewer viewer;
+    private final EditButton button;
 	
 	public Problem(ExploreProblemInteraction anInteraction) {
 		super(anInteraction.factory.getApplicationContext());
 		setId(anInteraction.factory.newId());
-		viewer = new Viewer(anInteraction);
-		LayoutParams viewerParams = new LayoutParams(LayoutParams.FILL_PARENT, 
-				LayoutParams.WRAP_CONTENT);
+
+        viewer = new Viewer(anInteraction);
 		editor = new Editor(anInteraction);
-		LayoutParams editorParams = new LayoutParams(LayoutParams.FILL_PARENT, 
-				LayoutParams.WRAP_CONTENT);
-		viewerParams.addRule(ALIGN_PARENT_TOP);
-		viewerParams.addRule(ABOVE, editor.getId());
-		editorParams.addRule(ALIGN_PARENT_BOTTOM);
-		addView(viewer, viewerParams);
-		addView(editor, editorParams);
+        button = new EditButton(anInteraction);
+        button.setText("Edit");
+
+        startingLayout();
 
 		editor.setOnKeyListener(new OnKeyListener() {
 			public boolean onKey(View view, int keyCode, KeyEvent event) {
 				if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
 						(keyCode == KeyEvent.KEYCODE_ENTER)) {
-					viewer.setText(editor.getText().toString());
+                    closeEditor();
 					return true;
 				}
 				return false;
@@ -115,7 +130,8 @@ public class Problem extends RelativeLayout implements Widget {
 		editor.setOnEditorActionListener(new OnEditorActionListener() {
 			public boolean onEditorAction(TextView view, int actionId, KeyEvent event) {
 				if (actionId == EditorInfo.IME_ACTION_DONE) {
-					viewer.setText(editor.getText().toString());
+					closeEditor();
+                    return true;
 				}
 				return false;
 			}			
@@ -124,7 +140,8 @@ public class Problem extends RelativeLayout implements Widget {
         editor.setOnKeyPreImeListener(new Editor.OnKeyPreImeListener() {
             public boolean onKeyPreIme(int KeyCode, KeyEvent event) {
                 if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-                    viewer.setText(editor.getText().toString());
+                    closeEditor();
+                    return true;
                 }
                 return editor.dispatchKeyEvent(event);
             }
@@ -132,11 +149,63 @@ public class Problem extends RelativeLayout implements Widget {
 
         editor.addTextChangedListener(new Editor.OnTextChangedListener() {
             public void afterTextChanged(Editable s) {
-                viewer.setText(editor.getText().toString());
+                transferText();
+            }
+        });
+
+        button.setOnClickListener(new OnClickListener() {
+            public void onClick(View view) {
+                openEditor();
             }
         });
 	}
-	
+
+    void transferText() {
+        viewer.setText(editor.getText().toString());
+    }
+
+    LayoutParams createViewerParamsWith(View view) {
+        LayoutParams viewerParams = new LayoutParams(LayoutParams.FILL_PARENT,
+                LayoutParams.WRAP_CONTENT);
+        viewerParams.addRule(ALIGN_PARENT_TOP);
+        viewerParams.addRule(ABOVE, view.getId());
+        return viewerParams;
+    }
+
+    private LayoutParams createLayoutWith(View view) {
+        LayoutParams viewerParams = createViewerParamsWith(view);
+        viewer.setLayoutParams(viewerParams);
+
+        LayoutParams params = new LayoutParams(LayoutParams.FILL_PARENT,
+                LayoutParams.WRAP_CONTENT);
+        params.addRule(ALIGN_PARENT_BOTTOM);
+        return params;
+    }
+
+    void layoutWith(View view) {
+        LayoutParams params = createLayoutWith(view);
+
+        addView(view, params);
+        requestLayout();
+    }
+
+    void startingLayout() {
+        LayoutParams viewerParams = createLayoutWith(button);
+        addView(viewer, viewerParams);
+        layoutWith(button);
+    }
+
+    void openEditor() {
+        removeView(button);
+        layoutWith(editor);
+    }
+
+    void closeEditor() {
+        editor.hideIME();
+        removeView(editor);
+        layoutWith(button);
+    }
+
 	public void setText(String aString) {
 		viewer.setText(aString);
 		editor.setText(aString);
