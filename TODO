@@ -48,7 +48,7 @@ Masumi TODO List
             the user presses the back button on the device, the done button in the
             edit window in landscape mode, or the enter key on the keyboard.
 	  - [X] Open the IME immediately when opening the edit window.
-	  - [ ] Get rid of the button and edit the field simply by clicking on it.
+	  - [X] Get rid of the button and edit the field simply by clicking on it.
 	        Not sure if this is possible.
       - [ ] Ensure that both the edit field and the display field retain
 			their information when the orientation is changed.

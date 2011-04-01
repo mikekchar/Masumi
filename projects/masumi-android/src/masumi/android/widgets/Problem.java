@@ -3,6 +3,7 @@ package masumi.android.widgets;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MotionEvent;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import masumi.android.ExploreProblemInteraction;
@@ -50,6 +51,7 @@ public class Problem extends RelativeLayout implements Widget {
 
         Context context;
         OnKeyPreImeListener keyPreImeListener;
+        final float originalFontSize;
 
 		public Editor(ExploreProblemInteraction anInteraction) {
 			super(anInteraction.factory.getApplicationContext());
@@ -60,6 +62,7 @@ public class Problem extends RelativeLayout implements Widget {
 					InputType.TYPE_TEXT_FLAG_MULTI_LINE);
 			this.setImeOptions(EditorInfo.IME_ACTION_DONE);
             keyPreImeListener = null;
+            originalFontSize = getTextSize();
 		}
 
         public void setOnKeyPreImeListener(OnKeyPreImeListener listener) {
@@ -85,12 +88,19 @@ public class Problem extends RelativeLayout implements Widget {
             imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT);
         }
 
+        void scaleFont(float scale) {
+            setTextSize(originalFontSize * scale);
+        }
+
 	}
 	
 	static class Viewer extends WebView {
-		public Viewer(ExploreProblemInteraction anInteraction) {
+        private float zoomStart;
+
+        public Viewer(ExploreProblemInteraction anInteraction) {
 			super(anInteraction.factory.getApplicationContext());
 			setId(anInteraction.factory.newId());
+            zoomStart = (float) 0.0;
 		}
 		
 		public void setText(String aString) {
@@ -98,18 +108,23 @@ public class Problem extends RelativeLayout implements Widget {
             this.setInitialScale(scale);
 			loadDataWithBaseURL("fake.url.com", aString, "", "UTF-8", "");
 		}
-	}
 
-    static class EditButton extends Button {
-        public EditButton(ExploreProblemInteraction anInteraction) {
-            super(anInteraction.factory.getApplicationContext());
-            setId(anInteraction.factory.newId());
+        public void startTouch() {
+            zoomStart = this.getScale();
+        }
+
+        public boolean touchIsZoom() {
+            return (this.getScale() != zoomStart);
+        }
+
+        public void stopTouch() {
+            zoomStart = (float) 0.0;
         }
     }
-	
+
 	private final Editor editor;
 	private final Viewer viewer;
-    private final EditButton button;
+    private View currentlyViewing;
 	
 	public Problem(ExploreProblemInteraction anInteraction) {
 		super(anInteraction.factory.getApplicationContext());
@@ -117,10 +132,30 @@ public class Problem extends RelativeLayout implements Widget {
 
         viewer = new Viewer(anInteraction);
 		editor = new Editor(anInteraction);
-        button = new EditButton(anInteraction);
-        button.setText("Edit");
 
         startingLayout();
+
+        viewer.setOnTouchListener(new OnTouchListener() {
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                boolean handledEvent = false;
+
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    viewer.startTouch();
+                } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    if (!viewer.touchIsZoom()) {
+                        openEditor();
+                        handledEvent = true;
+                    } else {
+                        editor.scaleFont(viewer.getScale());
+                    }
+                    viewer.stopTouch();
+                } else if (motionEvent.getAction() == MotionEvent.ACTION_CANCEL) {
+                    viewer.stopTouch();
+                }
+                return handledEvent;
+            }
+        });
+
 
 		editor.setOnKeyListener(new OnKeyListener() {
 			public boolean onKey(View view, int keyCode, KeyEvent event) {
@@ -158,59 +193,47 @@ public class Problem extends RelativeLayout implements Widget {
                 transferText();
             }
         });
-
-        button.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                openEditor();
-            }
-        });
 	}
 
     void transferText() {
         viewer.setText(editor.getText().toString());
     }
 
-    LayoutParams createViewerParamsWith(View view) {
-        LayoutParams viewerParams = new LayoutParams(LayoutParams.FILL_PARENT,
-                LayoutParams.WRAP_CONTENT);
-        viewerParams.addRule(ALIGN_PARENT_TOP);
-        viewerParams.addRule(ABOVE, view.getId());
-        return viewerParams;
-    }
-
-    private LayoutParams createLayoutWith(View view) {
-        LayoutParams viewerParams = createViewerParamsWith(view);
-        viewer.setLayoutParams(viewerParams);
-
+    LayoutParams createParams() {
         LayoutParams params = new LayoutParams(LayoutParams.FILL_PARENT,
-                LayoutParams.WRAP_CONTENT);
+                                                LayoutParams.WRAP_CONTENT);
+        params.addRule(ALIGN_PARENT_TOP);
         params.addRule(ALIGN_PARENT_BOTTOM);
         return params;
     }
 
-    void layoutWith(View view) {
-        LayoutParams params = createLayoutWith(view);
 
+    void layout(View view) {
+        LayoutParams params = createParams();
+        currentlyViewing = view;
+        
         addView(view, params);
         requestLayout();
     }
 
     void startingLayout() {
-        LayoutParams viewerParams = createLayoutWith(button);
-        addView(viewer, viewerParams);
-        layoutWith(button);
+        layout(viewer);
     }
 
     void openEditor() {
-        removeView(button);
-        layoutWith(editor);
-        editor.showIME();
+        if (currentlyViewing != editor) {
+            removeView(viewer);
+            layout(editor);
+            editor.showIME();
+        }
     }
 
     void closeEditor() {
-        editor.hideIME();
-        removeView(editor);
-        layoutWith(button);
+        if (currentlyViewing == editor) {
+            editor.hideIME();
+            removeView(editor);
+            layout(viewer);
+        }
     }
 
 	public void setText(String aString) {
