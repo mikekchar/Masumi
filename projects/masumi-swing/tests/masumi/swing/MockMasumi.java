@@ -1,4 +1,4 @@
-package test_framework;
+package masumi.swing;
 
 import masumi.contexts.Masumi;
 import masumi.contexts.InteractionFactory;
@@ -12,7 +12,7 @@ import masumi.contexts.InteractionFactory;
  * @author Mike Charlton
  *
  */
-public class MockMasumi extends Masumi {
+public class MockMasumi extends MasumiForSwing {
 	
 	public MockMasumi(InteractionFactory aFactory){
 		super(aFactory);

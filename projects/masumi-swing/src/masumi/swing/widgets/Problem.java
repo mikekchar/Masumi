@@ -9,8 +9,11 @@ import javax.swing.AbstractAction;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 import masumi.contexts.Widget;
+import masumi.swing.ExploreProblemInteraction;
 
 public class Problem extends JScrollPane implements Widget {
 
@@ -45,15 +48,39 @@ public class Problem extends JScrollPane implements Widget {
 		}
 	}
 
+    private class ProblemListener implements DocumentListener {
+        private Problem problem;
+
+        public ProblemListener(Problem aProblem) {
+            super();
+            problem = aProblem;
+        }
+
+        public void insertUpdate(DocumentEvent documentEvent) {
+            problem.updateContext();
+        }
+
+        public void removeUpdate(DocumentEvent documentEvent) {
+            problem.updateContext();
+        }
+
+        public void changedUpdate(DocumentEvent documentEvent) {
+            // Normal text updates don't fire this
+        }
+    }
+
 	private final JTextArea text;
+    private final ExploreProblemInteraction interaction;
 	
-	public Problem() {
+	public Problem(ExploreProblemInteraction anInteraction) {
 		super();
+        interaction = anInteraction;
 		text = new JTextArea();
 		text.setEditable(true);
 		text.setLineWrap(true);
 		Font font = new Font("sans", Font.PLAIN, 12);
 		text.setFont(font);
+        text.getDocument().addDocumentListener(new ProblemListener(this));
 		setViewportView(text);
 		setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
 		setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -106,6 +133,10 @@ public class Problem extends JScrollPane implements Widget {
 	public void setText(String aString) {
 		text.setText(aString);
 	}
+
+    public void updateContext() {
+        interaction.updateContext();
+    }
 	
 	public boolean is_editable() {
 		return text.isEditable();

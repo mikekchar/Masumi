@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/projects/masumi-android/masumi-android.iml" filepath="$PROJECT_DIR$/projects/masumi-android/masumi-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/masumi-core/masumi-core.iml" filepath="$PROJECT_DIR$/projects/masumi-core/masumi-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/masumi-swing/masumi-swing.iml" filepath="$PROJECT_DIR$/projects/masumi-swing/masumi-swing.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/test_framework/test_framework.iml" filepath="$PROJECT_DIR$/projects/test_framework/test_framework.iml" />
     </modules>
   </component>
 </project>

@@ -4,10 +4,26 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="425359d1-88f5-4da7-8a84-2fbf6cfc78e7" name="Default" comment="">
+    <list default="true" id="425359d1-88f5-4da7-8a84-2fbf6cfc78e7" name="Default" comment="Get rid of the edit button.  Now open the editor when clicking on the viewer.  Also, retain the font scale while in the Editor.">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/projects/test_framework/src/masumi/test_framework/MockMasumi.java" afterPath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/MockMasumi.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/projects/test_framework/src/masumi/test_framework/Story.java" afterPath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/Story.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO" afterPath="$PROJECT_DIR$/TODO" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/ExploreProblemInteraction.java" afterPath="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/ExploreProblemInteraction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/MasumiActivity.java" afterPath="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/MasumiActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/tests/exploreProblem/Open.java" afterPath="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/tests/exploreProblem/Open.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/widgets/Problem.java" afterPath="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/widgets/Problem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/ExploreProblem.java" afterPath="$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/ExploreProblem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-swing/.classpath" afterPath="$PROJECT_DIR$/projects/masumi-swing/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/ExploreProblemInteraction.java" afterPath="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/ExploreProblemInteraction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/MasumiForSwing.java" afterPath="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/MasumiForSwing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/widgets/Problem.java" afterPath="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/widgets/Problem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/exploreProblem/Close.java" afterPath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/exploreProblem/Close.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/exploreProblem/Open.java" afterPath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/exploreProblem/Open.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/main/Close.java" afterPath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/main/Close.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/main/Icon.java" afterPath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/main/Icon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/startup/Startup.java" afterPath="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/startup/Startup.java" />
     </list>
     <ignored path="Masumi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,30 +80,6 @@
   <component name="FavoritesManager">
     <favorites_list name="Masumi" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Problem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projects/masumi-android/src/masumi/android/widgets/Problem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="148" column="58" selection-start="4750" selection-end="4750" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TODO" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TODO">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="10" selection-start="2774" selection-end="2774" vertical-scroll-proportion="0.13881747">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
@@ -100,21 +92,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/tests/Story.java" />
-        <option value="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/AndroidFactory.java" />
-        <option value="$PROJECT_DIR$/projects/test_framework/src/masumi/test_framework/Story.java" />
-        <option value="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/MainInteraction.java" />
-        <option value="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/widgets/MainWindow.java" />
-        <option value="$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/Context.java" />
         <option value="$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/Main.java" />
         <option value="$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/Masumi.java" />
-        <option value="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/ExploreProblemInteraction.java" />
         <option value="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/MainInteraction.java" />
-        <option value="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/widgets/Problem.java" />
         <option value="$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/MasumiStrings.java" />
-        <option value="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/MasumiActivity.java" />
-        <option value="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/widgets/Problem.java" />
         <option value="$PROJECT_DIR$/TODO" />
+        <option value="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/tests/exploreProblem/Open.java" />
+        <option value="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/widgets/Problem.java" />
+        <option value="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/ExploreProblemInteraction.java" />
+        <option value="$PROJECT_DIR$/projects/masumi-android/src/masumi/android/MasumiActivity.java" />
+        <option value="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/ExploreProblemInteraction.java" />
+        <option value="$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/ExploreProblem.java" />
+        <option value="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/widgets/Problem.java" />
+        <option value="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/MockMasumi.java" />
+        <option value="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/Story.java" />
+        <option value="$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/startup/Startup.java" />
+        <option value="$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/MasumiForSwing.java" />
       </list>
     </option>
   </component>
@@ -350,6 +343,72 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="startup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Masumi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masumi-swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mocks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Masumi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masumi-swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Masumi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masumi-swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="exploreProblem" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -369,6 +428,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Masumi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masumi-swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="widgets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -450,6 +531,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Masumi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masumi-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Masumi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masumi-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exploreProblem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Favorites" />
@@ -458,14 +587,14 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="75" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="97" />
     <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="97" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="84" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="103" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1012" />
@@ -484,13 +613,13 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.lastSelected" value="preferences.lookFeel" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Android Application.masumi-android">
+  <component name="RunManager" selected="Application.MasumiForSwing">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="masumi-android" />
       <option name="TESTING_TYPE" value="0" />
@@ -655,7 +784,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="masumi-swing" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="34454" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -677,7 +812,13 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="54927" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -745,26 +886,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1373" height="771" extended-state="6" />
+    <frame x="-6" y="14" width="1386" height="763" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329582" sideWeight="0.4969605" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.4969605" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14426728" sideWeight="0.21634616" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2431611" sideWeight="0.670418" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.55775076" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Android Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.4969605" order="7" side_tool="true" content_ui="tabs" x="-3" y="0" width="1373" height="771" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39903846" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -784,7 +925,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create a button to open the edit window.  Change between showing the edit window and the button.  Close the IME when the edit window is closed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Get rid of the edit button.  Now open the editor when clicking on the viewer.  Also, retain the font scale while in the Editor." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -800,6 +941,7 @@
     <MESSAGE value="Set the encoding properly on the WebView" />
     <MESSAGE value="Send the data to the view when the user edits the fields. Also maintain the zoom between edits.  Unfortunately the zoom is lost in orientation changes, but I'm not entirely sure if that is a bad thing.  For now I won't keep it." />
     <MESSAGE value="Create a button to open the edit window.  Change between showing the edit window and the button.  Close the IME when the edit window is closed." />
+    <MESSAGE value="Get rid of the edit button.  Now open the editor when clicking on the viewer.  Also, retain the font scale while in the Editor." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -809,59 +951,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projects/masumi-android/src/masumi/android/AndroidFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="32" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/test_framework/src/masumi/test_framework/Story.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="31" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/masumi-core/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="1" selection-start="56" selection-end="56" vertical-scroll-proportion="0.032490976" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/masumi-android/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="36" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.8224956" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/Masumi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="26" selection-start="692" selection-end="692" vertical-scroll-proportion="0.26537785" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="32" selection-start="788" selection-end="788" vertical-scroll-proportion="0.3180272" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/Context.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="29" selection-start="1735" selection-end="1735" vertical-scroll-proportion="0.4302721" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/widgets/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="28" selection-start="901" selection-end="901" vertical-scroll-proportion="0.34353742" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/masumi-android/src/masumi/android/MainInteraction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="23" selection-start="276" selection-end="276" vertical-scroll-proportion="0.18367347" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/MainInteraction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="83" column="0" selection-start="1809" selection-end="1809" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/widgets/Problem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="5" selection-start="2940" selection-end="2940" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/MasumiStrings.java">
@@ -869,111 +961,82 @@
         <state line="6" column="19" selection-start="137" selection-end="137" vertical-scroll-proportion="0.18181819" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/ExploreProblemInteraction.java">
+    <entry file="file://$PROJECT_DIR$/TODO">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="50" column="10" selection-start="2774" selection-end="2774" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/masumi-android/src/masumi/android/MasumiActivity.java">
+    <entry file="file://$PROJECT_DIR$/projects/masumi-android/src/masumi/android/AndroidFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="35" selection-start="242" selection-end="242" vertical-scroll-proportion="0.21212122" />
+        <state line="28" column="24" selection-start="725" selection-end="725" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/masumi-android/src/masumi/android/tests/exploreProblem/Open.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1643" selection-end="1643" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/masumi-android/src/masumi/android/ExploreProblemInteraction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="5" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/masumi-android/src/masumi/android/widgets/Problem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="58" selection-start="4750" selection-end="4750" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="199" column="32" selection-start="6288" selection-end="6288" vertical-scroll-proportion="-36.666668" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TODO">
+    <entry file="file://$PROJECT_DIR$/projects/masumi-core/src/masumi/contexts/ExploreProblem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="10" selection-start="2774" selection-end="2774" vertical-scroll-proportion="0.13881747">
-          <folding />
-        </state>
+        <state line="36" column="29" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/ExploreProblemInteraction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="49" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/widgets/Problem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="72" selection-start="2183" selection-end="2183" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/mocks/MockSwingFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/Story.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="25" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/MockMasumi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="33" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/masumi-android/src/masumi/android/MasumiActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="14" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/masumi-swing/tests/masumi/swing/startup/Startup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="57" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/masumi-swing/src/masumi/swing/MasumiForSwing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="47" selection-start="931" selection-end="931" vertical-scroll-proportion="0.5008696" />
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="Copyright.UI">
         <settings>
           <splitter-proportions />
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Android</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Android 1.6 Platform</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>masumi-android</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Hamcrest</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
         </settings>
       </state>
       <state key="ScopeChooserConfigurable.UI">

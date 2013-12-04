@@ -7,13 +7,12 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import masumi.contexts.ExploreProblem;
 import masumi.swing.MainInteraction;
+import masumi.swing.Story;
 import masumi.swing.mocks.MockSwingFactory;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import test_framework.Story;
 
 /**
  * Story to describe what happens to the problem display when you close Masumi

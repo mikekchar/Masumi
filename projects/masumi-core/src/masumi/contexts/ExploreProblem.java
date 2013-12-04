@@ -18,17 +18,25 @@ public class ExploreProblem extends Context {
 		
 		/**
 		 * Set text of the current problem.
-		 */
+         * @param aString The text you want in the current problem.
+         */
 		public void setText(String aString);
 	}
+
+    String problemText;
 	
 	public ExploreProblem(InteractionFactory aFactory) {
 		super(aFactory);
+        problemText = aFactory.getString("exploreProblem");
 	}
 	
 	public Interaction getInteraction() {
 		return (Interaction) interaction;
 	}
+
+    public void updateProblem(String aString) {
+        problemText = aString;
+    }
 
 	@Override
 	public Context.Interaction create_interaction(){
@@ -38,7 +46,7 @@ public class ExploreProblem extends Context {
 	@Override
 	public void enter(Context parent) {
 		super.enter(parent);
-		getInteraction().setText(factory.getString("exploreProblem"));
+		getInteraction().setText(problemText);
 		getInteraction().selectAll();
 		getInteraction().update();
 	}

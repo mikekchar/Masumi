@@ -5,13 +5,12 @@ package masumi.swing.main;
 
 import static org.junit.Assert.*;
 import masumi.swing.MainInteraction;
+import masumi.swing.Story;
 import masumi.swing.mocks.MockSwingFactory;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import test_framework.Story;
 
 
 /**

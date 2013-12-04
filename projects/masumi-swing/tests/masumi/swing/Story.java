@@ -1,4 +1,4 @@
-package test_framework;
+package masumi.swing;
 
 import masumi.contexts.InteractionFactory;
 import masumi.contexts.Main;
@@ -40,7 +40,8 @@ public class Story {
 
 	/**
 	 * Make sure that Masumi has properly exited.  Usually this will be run by the tearDown methods.
-	 */
+     * @throws java.lang.Exception
+     */
 	public void tearDown() throws Exception {
 		if ((mainContext != null) && (mainContext.is_entered())) {
 			mainContext.exit();

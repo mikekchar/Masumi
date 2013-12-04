@@ -34,4 +34,22 @@ public class Open extends Story {
 		// I don't seem to be able to test that the widget is editable.  Sigh...
 	}
 
+    public void test_widgets_have_different_ids() {
+        // When
+        assertTrue(getMasumi().is_running());
+        ExploreProblem exploreProblem = mainContext.exploreProblem;
+        Problem problem = (Problem) exploreProblem.getInteraction().getWidget();
+
+        // It should
+        int problemID = problem.getId();
+        assertTrue(problemID != 0);
+        int editorID = problem.getEditorID();
+        assertTrue(editorID != 0);
+        assertFalse(problemID == editorID);
+        int viewerID = problem.getViewerID();
+        assertTrue(viewerID != 0);
+        assertFalse(problemID == viewerID);
+        assertFalse(editorID == viewerID);
+    }
+
 }

@@ -14,7 +14,7 @@ public class ExploreProblemInteraction implements ExploreProblem.Interaction {
 	public ExploreProblemInteraction(ExploreProblem aContext) {
 		context = aContext;
 		isOpen = false;
-		problem = new Problem();
+		problem = new Problem(this);
 	}
 	
 	/**
@@ -66,4 +66,8 @@ public class ExploreProblemInteraction implements ExploreProblem.Interaction {
 	public void setText(String aString) {
 		problem.setText(aString);
 	}
+
+    public void updateContext() {
+        context.updateProblem(problem.getText());
+    }
 }

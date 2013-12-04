@@ -12,7 +12,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import test_framework.Story;
+import masumi.swing.Story;
 
 /**
  * Story to describe what happens when you close Masumi

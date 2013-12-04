@@ -1,6 +1,7 @@
 package masumi.android.widgets;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
@@ -194,6 +195,18 @@ public class Problem extends RelativeLayout implements Widget {
             }
         });
 	}
+
+    public void saveWidgetState(Bundle state) {
+        viewer.saveState(state);
+    }
+
+    public int getEditorID() {
+        return editor.getId();
+    }
+    
+    public int getViewerID() {
+        return viewer.getId();
+    }
 
     void transferText() {
         viewer.setText(editor.getText().toString());
